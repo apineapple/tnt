@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -14,10 +13,13 @@
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
-	 
-    <title> tnt
+    <title>
+    	Try New Things
 			</title>
     <style type="text/css">
+    	body{
+ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    	}
 		img{
 			width: 300px;
 			height: 300px;
@@ -25,8 +27,7 @@
 		a{
 			text-decoration: none;
 		}
-		div{
-			color: black;
+		.album{
 position: fixed;
   top: 50%;
   left: 50%;
@@ -40,35 +41,58 @@ position: fixed;
 		}
 	</style>
   </head>
-  <body class="text-white">
-	  	<script>
-var images = [
-	'https://images.rapgenius.com/8da685853df207838ddb75accb2072b3.807x807x1.jpg',
-	'https://images.rapgenius.com/29569045049cff62767d13fbf1f9af55.1000x1000x1.jpg',
-	'https://i.scdn.co/image/ab67616d0000b2735901aaa980d3e714bf01171c',
-	'https://i.scdn.co/image/ab67616d0000b2731e797f1552a1136091145fd9',
-	'https://i.scdn.co/image/ab67616d0000b273e52a59a28efa4773dd2bfe1b',
-	'https://i.scdn.co/image/7fcc784929677b4b0c480a387567bb8c1586532c',
-	'https://i.scdn.co/image/ab67616d0000b2733fb6bc46c932ca1ab168526a',
-	'https://i.scdn.co/image/d1e45852702e21c779fcb7fc5bc5d17552447c03',
-	'https://i.scdn.co/image/ab67616d0000b273f8aaeba5e6dee1745371e822',
-	'https://i.scdn.co/image/81b8ca9e78f44aca9e34be7f4a9252f5cf7de19f',
-	'https://i.scdn.co/image/ab67616d0000b273085b8dd2bebd2aaac895c78e',
-	'https://i.scdn.co/image/f0ce506327cba6e105aaa42f3a6be98770a2bc5f',
-	'https://i.scdn.co/image/ab67616d0000b273210c8f856757abec0806209c',
-	'https://i.scdn.co/image/ab67616d0000b27390b4e1905b1fc48c537ec053',
-	'https://i.scdn.co/image/acca2e7a1e842f02255f2f55b5a6292328f9fc07',
-	'https://i.scdn.co/image/ab67616d0000b27346f9bf1154c7205b0e8b1667',
-	'https://i.scdn.co/image/ab67616d0000b273f5da2c149c9b9d25ed41a87d',
-	'https://i.scdn.co/image/04d460afec536a267d91d087bfc7f28a9149ff35',
-	'https://i.scdn.co/image/4662ef2e309808ddb0ed7d8819df607350efdc33',
-	'https://i.scdn.co/image/ab67616d0000b27389992f4d7d4ab94937bf9e23',
-	'https://i.scdn.co/image/ab67616d0000b273e4221d183898a2c206626b64',
-	'https://i.scdn.co/image/ab67616d0000b27338906032688bb13b135ce19a',
-	'https://i.scdn.co/image/3c428a08ac4c3c8b85b4efad1f7a42a7a2867879',
-	'https://i.scdn.co/image/ab67616d0000b273d844f6b7311a69b9a08e7a0f'
-];
+  <body>
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		    <script type="text/javascript">
+// place your images in this array
+var title = [
+'Ready to Die',
+'Illmatic',
+'Enter the Wu Tang',
+'Only Built 4 Cuban Linx',
+'Rumors',
+'Pet Sounds',
+'Unknown Pleasures',
+'Nevermind',
+'Veteran',
+'Pauls Boutique',
+'The Score',
+'Liquid Swords',
+'Deltron 3030',
+'Isolation',
+'Die Lit',
+'Doris',
+'4eva Is a Mightly Long Time',
+'May God Bless Your Hustle',
+'To Pimp a Butterfly',
+'Lemonade',
+'Twin Fantasy',
+'Selected Ambient Works 85-92',
+'Oxymoron',
+'Piñata',
+'InnerSpeaker',
+'Negro Swan',
+'Whack World',
+'Masterpiece',
+'The Velvet Underground and Nico',
+'Drunk',
+'Guns',
+'midcity',
+'A Quiet Farwell, Twenty Sixteen to Twenty Eighteen',
+'Nothing Great About Britain',
+'Titanic Rising',
+'Flamboyant',
+'Let the Sun Talk',
+'Atrocity Exhibition',
+'Charli',
+'Grey Area',
+'Coloring Book'
+];
 
 
 
@@ -97,40 +121,132 @@ var url= [
 'https://open.spotify.com/album/20U1UWeGcGq7JVW0tf8yfH',
 'https://open.spotify.com/album/7aNclGRxTysfh6z0d8671k',
 'https://open.spotify.com/album/7Et3bSTLLqdABO1qCxUplS',
-'https://open.spotify.com/album/43uErencdmuTRFZPG3zXL1'
+'https://open.spotify.com/album/43uErencdmuTRFZPG3zXL1',
+'https://open.spotify.com/album/5RA5hhLlbw31QfQRX11pwo',
+'https://open.spotify.com/album/7bvmGyFDwpHNRRRZJ0AHvn',
+'https://open.spotify.com/album/3ogNAkUhvQy0cFOfLoR6Y8',
+'https://open.spotify.com/album/4onPyHor2yOlVxCsIaGyHH',
+'https://open.spotify.com/album/4xwx0x7k6c5VuThz5qVqmV',
+'https://open.spotify.com/album/4anxEzh8xEKSPXKHGWiFue',
+'https://open.spotify.com/album/602bFcdb1Fof8HImMWxYvp',
+'https://open.spotify.com/album/1lgZgmdWGUt8Ypk5qgaRQH',
+'https://open.spotify.com/album/0ylicfYOxageLwo3uQxiWK',
+'https://open.spotify.com/album/5Ki4YFQrUx7hCcQx1LJUQb',
+'https://open.spotify.com/album/53VKICyqCf91sVkTdFrzKX',
+'https://open.spotify.com/album/4svcCm5yRZtKE0tXn4n1cn',
+'https://open.spotify.com/album/5asaxnymoPyghtKrUwJrwQ',
+'https://open.spotify.com/album/3e7vtKJ3m1zVh38VGq2g3H',
+'https://open.spotify.com/album/386IqvSuljaZsMjwDGGdLj',
+'https://open.spotify.com/album/4Wwm4xg2748zhYuzDRFTgY',
+'https://open.spotify.com/album/71QyofYesSsRMwFOTafnhB'
+
 ];
 
-
-
-
-var title = [
-'Ready to Die',
-'Illmatic',
-'Enter the Wu Tang',
-'Only Built 4 Cuban Linx',
-'Rumors',
-'Pet Sounds',
-'Unknown Pleasures',
-'Nevermind',
-'Veteran',
-'Pauls Boutique',
-'The Score',
-'Liquid Swords',
-'Deltron 3030',
-'Isolation',
-'Die Lit',
-'Doris',
-'4eva Is a Mightly Long Time',
-'May God Bless Your Hustle',
-'To Pimp a Butterfly',
-'Lemonade',
-'Twin Fantasy',
-'Selected Ambient Works 85-92',
-'Oxymoron',
-'Piñata'
+var images = [
+	'https://i.scdn.co/image/ab67616d0000b273a4950162a626593b7340f6c7',
+	'https://i.scdn.co/image/ab67616d0000b273b1178724f4be59abf7acc6c5',
+	'https://i.scdn.co/image/ab67616d0000b2735901aaa980d3e714bf01171c',
+	'https://i.scdn.co/image/ab67616d0000b2731e797f1552a1136091145fd9',
+	'https://i.scdn.co/image/ab67616d0000b273e52a59a28efa4773dd2bfe1b',
+	'https://i.scdn.co/image/7fcc784929677b4b0c480a387567bb8c1586532c',
+	'https://i.scdn.co/image/ab67616d0000b2733fb6bc46c932ca1ab168526a',
+	'https://i.scdn.co/image/d1e45852702e21c779fcb7fc5bc5d17552447c03',
+	'https://i.scdn.co/image/ab67616d0000b273f8aaeba5e6dee1745371e822',
+	'https://i.scdn.co/image/81b8ca9e78f44aca9e34be7f4a9252f5cf7de19f',
+	'https://i.scdn.co/image/ab67616d0000b273085b8dd2bebd2aaac895c78e',
+	'https://i.scdn.co/image/f0ce506327cba6e105aaa42f3a6be98770a2bc5f',
+	'https://i.scdn.co/image/ab67616d0000b273210c8f856757abec0806209c',
+	'https://i.scdn.co/image/ab67616d0000b27390b4e1905b1fc48c537ec053',
+	'https://i.scdn.co/image/acca2e7a1e842f02255f2f55b5a6292328f9fc07',
+	'https://i.scdn.co/image/ab67616d0000b27346f9bf1154c7205b0e8b1667',
+	'https://i.scdn.co/image/ab67616d0000b273f5da2c149c9b9d25ed41a87d',
+	'https://i.scdn.co/image/04d460afec536a267d91d087bfc7f28a9149ff35',
+	'https://i.scdn.co/image/4662ef2e309808ddb0ed7d8819df607350efdc33',
+	'https://i.scdn.co/image/ab67616d0000b27389992f4d7d4ab94937bf9e23',
+	'https://i.scdn.co/image/ab67616d0000b273e4221d183898a2c206626b64',
+	'https://i.scdn.co/image/ab67616d0000b27338906032688bb13b135ce19a',
+	'https://i.scdn.co/image/3c428a08ac4c3c8b85b4efad1f7a42a7a2867879',
+	'https://i.scdn.co/image/ab67616d0000b273d844f6b7311a69b9a08e7a0f',
+	'https://i.scdn.co/image/0ddf1d320dd3a96ca3a45666fbbb9e0a63735296',
+	'https://i.scdn.co/image/ab67616d0000b27347dd2ca47ec9bf14559e17c6',
+	'https://i.scdn.co/image/ab67616d0000b273b5979c45e4f23e95aefd6933',
+	'https://i.scdn.co/image/ab67616d0000b2737c489be841df6272caed47e9',
+	'https://i.scdn.co/image/6c47e597e0a8dd9b5a18abf16a203ba0003c8681',
+	'https://i.scdn.co/image/ab67616d0000b2735d6fb1541aad6c364a7fc369',
+	'https://i.scdn.co/image/176d5a7f186d09da5d03bc3f0208281833ba36f0',
+	'https://i.scdn.co/image/ab67616d0000b27311e0d6a100c4f93e293b1146',
+	'https://i.scdn.co/image/ab67616d0000b273c615312f90efceff73110ae2',
+	'https://i.scdn.co/image/ab67616d0000b2738fdd144d8a8e57db60c5c29d',
+	'https://i.scdn.co/image/ab67616d0000b2735676fba9c44ba772deb81727',
+	'https://i.scdn.co/image/ab67616d0000b2730bd2dd0041256bcca30a1d9a',
+	'https://i.scdn.co/image/473e49985ee7cea69a1c6e0d24d9787da4bf5c3a',
+	'https://i.scdn.co/image/ab67616d0000b2733e25c9ef701bb637773531fe',
+	'https://i.scdn.co/image/ab67616d0000b273cee4acc7bfe23bc75461a66c',
+	'https://i.scdn.co/image/ab67616d0000b2731c54fc953531d5da04232deb',
+	'https://i.scdn.co/image/ab67616d0000b273e71dd15fc5bdefd5bff70452'
 ];
 
 var ranking = [
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
 '---',
 '---',
 '---',
@@ -171,6 +287,8 @@ function getRandomTitle() {
 	var txt = title [ num ];
 	var rnk = ranking [ num ];
 
+	if(txt.length > 25) txt = txt.substring(0,25) + "...";
+
 	document.write("<a href='"+lnk+"'><img src='"+img+"'></a><br><br><p>"+txt+"<br>"+rnk+" of 100</p>");
 	    document.close()
 }
@@ -183,7 +301,7 @@ function refreshPage(){
 } 
 </script>
 
-<div>
+<div class="album" style="padding-left: 15px; padding-right: 15px; padding-top: 30px; padding-bottom: 30px; border-width: 1px; border-style: solid;">
 <script type="text/javascript">getRandomTitle();</script>
 <button type="submit"  onClick="refreshPage()">next</button>
 </div>
