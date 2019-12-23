@@ -35,10 +35,104 @@ position: fixed;
   transform: translate(-50%, -50%);
   text-align: center;
 		}
-		button{
-			background-color: rgb(0,0,0,0);
-			border:solid 1px;
-		}
+		.im {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  /* Location of the box */
+  /* bring your own prefixes */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */ /* Enable scroll if needed *//* Fallback color */ /* Black w/ opacity */
+  border-radius: 0px !important;
+}
+
+button{
+	background-color: rgba(0,0,0,0);
+	border-width: 1px;
+	border-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: auto;
+  width: 305px;
+  height: 305px;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.05s;
+  animation-name: animatetop;
+  animation-duration: 0.05s
+  -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.close {
+  float: left;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card {
+  width: 305px;
+  height: 305px;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform .5s;
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  position: fixed;
+  width: 305px;
+  height: 305px;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+
+.card__face--back {
+  transform: rotateY(180deg);
+}
+.scene {
+  width: 305px;
+  height: 305px;
+  perspective: 600px;
+}
 	</style>
   </head>
   <body>
@@ -278,33 +372,326 @@ var ranking = [
 '---',
 '---'
 ]
+
+var review = [
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed',
+'no opinion has been formed'
+]
+
+var songs = [
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs',
+'fav songs'
+]
   
  var num = Math.floor( Math.random() * images.length );
 
-function getRandomTitle() {
-	var img = images[ num ];
+ var img = images[ num ];
 	var lnk = url [ num ];
 	var txt = title [ num ];
 	var rnk = ranking [ num ];
 
-	if(txt.length > 25) txt = txt.substring(0,25) + "...";
+	var rev = review [ num ];
 
-	document.write("<a href='"+lnk+"'><img src='"+img+"'></a><br><br><p>"+txt+"<br>"+rnk+" of 100</p>");
-	    document.close()
+	var mp3 = songs [ num ];
+if(txt.length > 25) txt = txt.substring(0,25) + "...";
+
+function getRandomimg() {
+	document.write("<a href='"+lnk+"'><img src='"+img+"'></a>");
+	    document.close();
+}
+function getRandomtitle(){
+	document.write("<br><br><p>"+txt+"<br>"+rnk+" of 100</p>");
+	document.close();
+}
+
+function infoCaption(){
+document.write(rev+"<br><br>"+mp3);
+	    document.close();
 }
 
 </script>
 
-<script>
-function refreshPage(){
-    window.location.reload();
-} 
-</script>
 
-<div class="album" style="padding-left: 15px; padding-right: 15px; padding-top: 30px; padding-bottom: 30px; border-width: 1px; border-style: solid;">
-<script type="text/javascript">getRandomTitle();</script>
-<button type="submit"  onClick="refreshPage()">next</button>
+<div class="album" style="padding-left: 15px; padding-right: 15px; padding-top: 35px; padding-bottom: 35px; border-width: 1px; border-style: solid;">
+
+<div class="scene scene--card">
+  <div class="card">
+    <div class="card__face card__face--front"><script type="text/javascript">getRandomimg();</script></div>
+    <div class="card__face card__face--back"><div id="myModal" class="modal">
+ <div class="modal-content">
+    <div class="modal-body">
+    	<span class="close">&times;</span><br>
+      <p style=" 
+position: relative;
+      top: 25%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);"><script type="text/javascript">infoCaption();</script></p>
+    </div>
+  </div>
+
+</div></div>
+  </div>
 </div>
+
+<script type="text/javascript">getRandomtitle();</script>
+
+
+
+<button class="im" id="myBtn" type="submit">info</button>
+<!-- The Modal -->
+
+<button type="submit" onClick="refreshPage();">next</button>
+</div>
+<script>
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+var card = document.querySelector('.card');
+document.getElementById("myBtn").addEventListener( 'click', function() {
+  card.classList.toggle('is-flipped');
+});
+</script>
 
   </body>
 	    </html>
