@@ -25,6 +25,19 @@
 		a{
 			text-decoration: none;
 		}
+		div{
+			color: black;
+position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  text-align: center;
+		}
+		button{
+			background-color: rgb(0,0,0,0);
+			border:solid 1px;
+		}
 	</style>
   </head>
   <body class="text-white">
@@ -170,16 +183,16 @@ function getRandomTitle() {
 }
 
 </script>
-<div style="
-color: black;
-position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-  text-align: center;
-  ">
+
+<script>
+function refreshPage(){
+    window.location.reload();
+} 
+</script>
+
+<div>
 <script type="text/javascript">getRandomTitle();</script>
+<button type="submit"  onClick="refreshPage()">next</button>
 </div>
 
   </body>
