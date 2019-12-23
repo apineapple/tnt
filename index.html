@@ -42,9 +42,22 @@ position: fixed;
 	</style>
   </head>
   <body class="text-white">
-	  <audio autoplay>
+	 <audio id="myAudio" autoplay>
   <source src="https://ia800605.us.archive.org/8/items/NeverGonnaGiveYouUp/jocofullinterview41.mp3">
 </audio>
+
+<p>Click the button to find out if the audio automatically started to play as soon as it was ready.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myAudio").autoplay;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
 	  	<script>
 var images = [
 	'https://images.rapgenius.com/8da685853df207838ddb75accb2072b3.807x807x1.jpg',
