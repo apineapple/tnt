@@ -64,6 +64,8 @@ button{
 .modal-content {
   position: relative;
   background-color: white;
+  margin: auto;
+  top: 35px;
   width: 305px;
   height: 305px;
   -webkit-animation-name: animatetop;
@@ -102,36 +104,6 @@ button{
   cursor: pointer;
 }
 
-.card {
-  width: 305px;
-  height: 305px;
-  cursor: pointer;
-  transform-style: preserve-3d;
-  transform-origin: center right;
-  transition: transform .5s;
-}
-
-.card.is-flipped {
-  transform: translateX(-100%) rotateY(-180deg);
-}
-
-.card__face {
-  position: fixed;
-  width: 305px;
-  height: 305px;
-  text-align: center;
-  backface-visibility: hidden;
-}
-
-
-.card__face--back {
-  transform: rotateY(180deg);
-}
-.scene {
-  width: 305px;
-  height: 305px;
-  perspective: 600px;
-}
 	</style>
   </head>
   <body>
@@ -610,17 +582,13 @@ var songs = [
 	var rev = review [ num ];
 
 	var mp3 = songs [ num ];
-if(txt.length > 25) txt = txt.substring(0,25) + "...";
 
-function getRandomimg() {
-	document.write("<a href='"+lnk+"'><img src='"+img+"'></a>");
+
+function getRandomTitle() {
+if(txt.length > 25) txt = txt.substring(0,25) + "...";
+	document.write("<a href='"+lnk+"'><img src='"+img+"'></a><br><br><p>"+txt+"<br>"+rnk+" of 100</p>");
 	    document.close();
 }
-function getRandomtitle(){
-	document.write("<br><br><p>"+txt+"<br>"+rnk+" of 100</p>");
-	document.close();
-}
-
 function infoCaption(){
 document.write(rev+"<br><br>"+mp3);
 	    document.close();
@@ -630,12 +598,14 @@ document.write(rev+"<br><br>"+mp3);
 
 
 <div class="album" style="padding-left: 15px; padding-right: 15px; padding-top: 35px; padding-bottom: 35px; border-width: 1px; border-style: solid;">
+<script type="text/javascript">getRandomTitle();</script>
 
-<div class="scene scene--card">
-  <div class="card">
-    <div class="card__face card__face--front"><script type="text/javascript">getRandomimg();</script></div>
-    <div class="card__face card__face--back"><div id="myModal" class="modal">
- <div class="modal-content">
+<button class="im" id="myBtn" type="submit">info</button>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
     <div class="modal-body">
     	<span class="close">&times;</span><br>
       <p style=" 
@@ -647,17 +617,7 @@ position: relative;
     </div>
   </div>
 
-</div></div>
-  </div>
 </div>
-
-<script type="text/javascript">getRandomtitle();</script>
-
-
-
-<button class="im" id="myBtn" type="submit">info</button>
-<!-- The Modal -->
-
 <button type="submit" onClick="refreshPage();">next</button>
 </div>
 <script>
@@ -686,11 +646,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-var card = document.querySelector('.card');
-document.getElementById("myBtn").addEventListener( 'click', function() {
-  card.classList.toggle('is-flipped');
-});
 </script>
-
   </body>
 	    </html>
