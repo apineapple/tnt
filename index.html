@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
+    <title> ALBUMS
+		  <link rel="shortcut icon" href="icon.ico" />
+			</title>
+    <style type="text/css">
+		img{
+			width: 300px;
+			height: 300px;
+		}
+		a{
+			text-decoration: none;
+		}
+	</style>
+  </head>
+  <body class="text-white">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		    <script type="text/javascript">
+// place your images in this array
+var images = [
+	'https://images.rapgenius.com/8da685853df207838ddb75accb2072b3.807x807x1.jpg',
+	'https://images.rapgenius.com/29569045049cff62767d13fbf1f9af55.1000x1000x1.jpg',
+	'https://i.scdn.co/image/ab67616d0000b2735901aaa980d3e714bf01171c',
+	'https://i.scdn.co/image/ab67616d0000b2731e797f1552a1136091145fd9',
+	'https://i.scdn.co/image/ab67616d0000b273e52a59a28efa4773dd2bfe1b',
+	'https://i.scdn.co/image/7fcc784929677b4b0c480a387567bb8c1586532c',
+	'https://i.scdn.co/image/ab67616d0000b2733fb6bc46c932ca1ab168526a',
+	'https://i.scdn.co/image/d1e45852702e21c779fcb7fc5bc5d17552447c03',
+	'https://i.scdn.co/image/ab67616d0000b273f8aaeba5e6dee1745371e822',
+	'https://i.scdn.co/image/81b8ca9e78f44aca9e34be7f4a9252f5cf7de19f',
+	'https://i.scdn.co/image/ab67616d0000b273085b8dd2bebd2aaac895c78e',
+	'https://i.scdn.co/image/f0ce506327cba6e105aaa42f3a6be98770a2bc5f',
+	'https://i.scdn.co/image/ab67616d0000b273210c8f856757abec0806209c',
+	'https://i.scdn.co/image/ab67616d0000b27390b4e1905b1fc48c537ec053',
+	'https://i.scdn.co/image/acca2e7a1e842f02255f2f55b5a6292328f9fc07',
+	'https://i.scdn.co/image/ab67616d0000b27346f9bf1154c7205b0e8b1667',
+	'https://i.scdn.co/image/ab67616d0000b273f5da2c149c9b9d25ed41a87d',
+	'https://i.scdn.co/image/04d460afec536a267d91d087bfc7f28a9149ff35',
+	'https://i.scdn.co/image/4662ef2e309808ddb0ed7d8819df607350efdc33',
+	'https://i.scdn.co/image/ab67616d0000b27389992f4d7d4ab94937bf9e23',
+	'https://i.scdn.co/image/ab67616d0000b273e4221d183898a2c206626b64',
+	'https://i.scdn.co/image/ab67616d0000b27338906032688bb13b135ce19a',
+	'https://i.scdn.co/image/3c428a08ac4c3c8b85b4efad1f7a42a7a2867879',
+	'https://i.scdn.co/image/ab67616d0000b273d844f6b7311a69b9a08e7a0f'
+];
+
+
+
+
+
+var url= [
+'https://open.spotify.com/album/2yiX02xQ3Qo2fDXbfEQeS3',
+'https://open.spotify.com/album/3kEtdS2pH6hKcMU9Wioob1',
+'https://open.spotify.com/album/3tQd5mwBtVyxCoEo4htGAV',
+'https://open.spotify.com/album/7btiyhWzUfzxN3ijSiBpC8',
+'https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu',
+'https://open.spotify.com/album/0BBduHWw9CbB5dctxFp48f',
+'https://open.spotify.com/album/0cbpcdI4UySacPh5RCpDfo',
+'https://open.spotify.com/album/2guirTSEqLizK7j9i1MTTZ',
+'https://open.spotify.com/album/51WLEfPEEkzAWurvuY6Gco',
+'https://open.spotify.com/album/1kmyirVya5fRxdjsPFDM05',
+'https://open.spotify.com/album/18XFe4CPBgVezXkxZP6rTb',
+'https://open.spotify.com/album/3k8xoyOXkGgZxUKgpmxz4P',
+'https://open.spotify.com/album/04uhhcjGVCHodMgZjXOlye',
+'https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY',
+'https://open.spotify.com/album/7dAm8ShwJLFm9SaJ6Yc58O',
+'https://open.spotify.com/album/5vRfIDOPJHy3W2wHWbzLlE',
+'https://open.spotify.com/album/6vGEX2ejVVsHTIsqI1teZg',
+'https://open.spotify.com/album/3kVs5uH5hbdeNwp4q0cyEi',
+'https://open.spotify.com/album/7ycBtnsMtyVbbwTfJwRjSP',
+'https://open.spotify.com/album/7dK54iZuOxXFarGhXwEXfF',
+'https://open.spotify.com/album/20U1UWeGcGq7JVW0tf8yfH',
+'https://open.spotify.com/album/7aNclGRxTysfh6z0d8671k',
+'https://open.spotify.com/album/7Et3bSTLLqdABO1qCxUplS',
+'https://open.spotify.com/album/43uErencdmuTRFZPG3zXL1'
+];
+
+
+
+
+var title = [
+'Ready to Die',
+'Illmatic',
+'Enter the Wu Tang',
+'Only Built 4 Cuban Linx',
+'Rumors',
+'Pet Sounds',
+'Unknown Pleasures',
+'Nevermind',
+'Veteran',
+'Pauls Boutique',
+'The Score',
+'Liquid Swords',
+'Deltron 3030',
+'Isolation',
+'Die Lit',
+'Doris',
+'4eva Is a Mightly Long Time',
+'May God Bless Your Hustle',
+'To Pimp a Butterfly',
+'Lemonade',
+'Twin Fantasy',
+'Selected Ambient Works 85-92',
+'Oxymoron',
+'Piñata'
+];
+
+var ranking = [
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---',
+'---'
+]
+  
+ var num = Math.floor( Math.random() * images.length );
+
+function getRandomTitle() {
+	var img = images[ num ];
+	var lnk = url [ num ];
+	var txt = title [ num ];
+	var rnk = ranking [ num ];
+
+	document.write("<a href='"+lnk+"'><img src='"+img+"'></a><br><br><p>"+txt+"<br>"+rnk+" of 100</p>");
+	    document.close()
+}
+
+</script>
+<div style="
+color: black;
+position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  ">
+<script type="text/javascript">getRandomTitle();</script>
+</div>
+
+  </body>
+	    </html>
