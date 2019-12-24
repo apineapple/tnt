@@ -17,9 +17,7 @@
     	Try New Things
 			</title>
     <style type="text/css">
-    	body{
- /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    	}
+
 		img{
 			width: 300px;
 			height: 300px;
@@ -581,11 +579,10 @@ function infoCaption(){
 document.write(rev+"<br><br>"+mp3);
 	    document.close();
 }
-
 </script>
 
 
-<div class="album" style="padding-left: 15px; padding-right: 15px; padding-top: 35px; padding-bottom: 35px; border-width: 1px; border-style: solid;">
+<div class="album" style="background-color: white; padding-left: 15px; padding-right: 15px; padding-top: 35px; padding-bottom: 35px; border-width: 1px; border-style: solid;">
 <script type="text/javascript">getRandomTitle();</script>
 
 <button class="im" id="myBtn" type="submit">info</button>
@@ -606,7 +603,7 @@ position: relative;
   </div>
 
 </div>
-<button type="submit" onClick="refreshPage();">next</button>
+<button type="submit" onClick="window.location.reload();">next</button>
 </div>
 <script>
 var modal = document.getElementById("myModal");
