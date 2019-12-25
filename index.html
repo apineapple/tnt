@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <!-- Required meta tags -->
@@ -16,7 +17,7 @@
     <title>
     	Try New Things
 			</title>
-    <style type="text/css">
+    <style>
 		img{
 			width: 300px;
 			height: 300px;
@@ -29,6 +30,7 @@ position: fixed;
   top: 50%;
   left: 50%;
   /* bring your own prefixes */
+
   transform: translate(-50%, -50%);
   text-align: center;
 		}
@@ -48,7 +50,6 @@ position: fixed;
   /* bring your own prefixes */
   width: 100%; /* Full width */
   height: 100%; /* Full height */ /* Enable scroll if needed *//* Fallback color */ /* Black w/ opacity */
-  border-radius: 0px !important;
 }
 
 button{
@@ -62,11 +63,9 @@ button{
   position: relative;
   background-color: white;
   margin: auto;
-  margin-top: 35px;
-  width: 305px;
-  height: 305px;
-  -webkit-border-radius: 0px !important;
-    -moz-border-radius: 0px !important;
+  top: 35px;
+  width: 300px;
+  height: 300px;
     border-radius: 0px !important;
     border-style: solid;
     border-width: 1px;
@@ -75,19 +74,6 @@ button{
 
 /* Add Animation */
 
-
-.close {
-  float: left;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
 
 	</style>
   </head>
@@ -98,7 +84,7 @@ button{
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		    <script type="text/javascript">
+		    <script>
 // place your images in this array
 var title = [
 'Ready to Die',
@@ -905,9 +891,9 @@ var songs = [
 'fav songs'
 ]
  
- var num = Math.floor( Math.random() * images.length );
+//var num = Math.floor( Math.random() * images.length );
 
-// var num = title.length-1;
+var num = title.length-35; // for debuging newest albums
 
  var img = images[ num ];
 	var lnk = url [ num ];
@@ -932,7 +918,7 @@ document.write(rev+"<br>-----------<br>"+mp3);
 
 
 <div class="album" style="background-color: white; padding-left: 15px; padding-right: 15px; padding-top: 35px; padding-bottom: 35px; border-width: 1px; border-style: solid;">
-<script type="text/javascript">getRandomTitle();</script>
+<script>getRandomTitle();</script>
 
 <button class="im" id="myBtn" type="submit">info</button>
 <!-- The Modal -->
@@ -944,10 +930,10 @@ document.write(rev+"<br>-----------<br>"+mp3);
     	<span style="visibility: hidden;" class="close">&times;</span><br>
       <p style=" 
 position: relative;
-      top: 30%;
+     margin-top: 30%;
   left: 50%;
   /* bring your own prefixes */
-  transform: translate(-50%, -50%);"><script type="text/javascript">infoCaption();</script></p>
+  transform: translate(-50%, -50%);"><script>infoCaption();</script></p>
     </div>
   </div>
 
