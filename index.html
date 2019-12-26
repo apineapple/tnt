@@ -17,6 +17,29 @@
     <title>
     	Try New Things
 			</title>
+
+<script type="text/javascript">
+// Detect whether device supports orientationchange event, otherwise fall back to
+// the resize event.
+var supportsOrientationChange = "onorientationchange" in window,
+    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+
+window.addEventListener(orientationEvent, function() {
+    if(window.orientation==0)
+    {
+      document.getElementById('portrait').style.display = '';
+      document.getElementById('landscape').style.display = 'none';
+    }
+    else if(window.orientation==90)
+    {
+      document.getElementById('portrait').style.display = 'none';
+      document.getElementById('landscape').style.display = '';
+    }
+}, false);
+</script>
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+
     <style>
 		img{
 			width: 300px;
@@ -972,34 +995,6 @@ function checkKeyPressed(evt) {
     if (evt.keyCode == "13") {
            window.location.reload();
     }
-}
-
-$(window).bind('orientationchange resize', function(event){
-  if (event.orientation) {
-    if (event.orientation == 'landscape') {
-      if (window.rotation == 90) {
-        rotate(this, -90);
-      } else {
-        rotate(this, 90);
-      }
-    }
-  }
-});
-
-function rotate(el, degs) {
-  iedegs = degs/90;
-  if (iedegs < 0) iedegs += 4;
-  transform = 'rotate('+degs+'deg)';
-  iefilter = 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+iedegs+')';
-  styles = {
-    transform: transform,
-    '-webkit-transform': transform,
-    '-moz-transform': transform,
-    '-o-transform': transform,
-    filter: iefilter,
-    '-ms-filter': iefilter
-  };
-  $(el).css(styles);
 }
 </script>
   </body>
