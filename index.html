@@ -17,7 +17,19 @@
     <title>
     	Try New Things
 			</title>
-    <style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
 		img{
 			width: 300px;
 			height: 300px;
@@ -33,6 +45,8 @@ position: fixed;
 
   transform: translate(-50%, -50%);
   text-align: center;
+  color: black;
+	border:  1px solid black;
 		}
 		.im {
   position: absolute;
@@ -75,11 +89,57 @@ button{
 
 /* Add Animation */
 
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
 
+
+.wrapper { 
+  height: 100%;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+background-size: 1800% 1800%;
+
+-webkit-animation: rainbow 18s ease infinite;
+-z-animation: rainbow 18s ease infinite;
+-o-animation: rainbow 18s ease infinite;
+  animation: rainbow 18s ease infinite;}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
 	</style>
   </head>
   <body>
-
+<!--<video autoplay muted loop id="myVideo">
+  <source src="mp.mp4" type="video/mp4">
+</video>-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -158,6 +218,7 @@ var title = [
 'Rodeo',
 'Good Kid, M.A.A.D City',
 '1000 Gecs',
+'Bubba',
 'White Trash',
 'Ctrl',
 'Blonde',
@@ -168,7 +229,10 @@ var title = [
 'Nonagon Infinity',
 'Norman Fucking Rockwell',
 'Kid A',
-'Because The Internet'
+'Because The Internet',
+'Truck Music',
+'The Plugs I Met',
+'Tnght'
 ];
 
 
@@ -245,6 +309,7 @@ var url= [
 'https://open.spotify.com/album/4PWBTB6NYSKQwfo79I3prg',
 'https://open.spotify.com/album/1DqhWr73Fh5yoNzKLas0G3',
 'https://open.spotify.com/album/4CGanXs6KlVuXXdNrf82qE',
+'https://open.spotify.com/album/5FQ4sOGqRWUA5wO20AwPcO',
 'https://open.spotify.com/album/72ojHizmH0fKoZHX15gllP',
 'https://open.spotify.com/album/76290XdXVF9rPzGdNRWdCh',
 'https://open.spotify.com/album/3mH6qwIy9crq0I9YQbOuDf',
@@ -255,7 +320,10 @@ var url= [
 'https://open.spotify.com/album/4imRDpzmb4zwvxKhNzJhxr',
 'https://open.spotify.com/album/5XpEKORZ4y6OrCZSKsi46A',
 'https://open.spotify.com/album/19RUXBFyM4PpmrLRdtqWbp',
-'https://open.spotify.com/album/4GNIhgEGXzWGAefgN5qjdU'
+'https://open.spotify.com/album/4GNIhgEGXzWGAefgN5qjdU',
+'https://open.spotify.com/album/5m9PLhWhhuKJyTEZpBg7SV',
+'https://open.spotify.com/album/5So31JibrTO74WvuCozsAb',
+'https://open.spotify.com/album/4e0s9NinQo02X4exDDmW65'
 
 ];
 
@@ -330,6 +398,7 @@ var images = [
 	'https://i.scdn.co/image/ab67616d0000b2737433176f037e0ba14190c34f',
 	'https://i.scdn.co/image/fd5d75466a6b0515919baf00e534c901a76d28a0',
 	'https://i.scdn.co/image/ab67616d0000b273acd9825c2d60ddee38f643b3',
+	'https://i.scdn.co/image/14ebdc93e4de87e03781b6409a7f5eeec1314606',
 	'https://i.scdn.co/image/ab67616d0000b2733fefe2f0500c4dfe5b491993',
 	'https://i.scdn.co/image/ab67616d0000b2734c79d5ec52a6d0302f3add25',
 	'https://i.scdn.co/image/ab67616d0000b273c5649add07ed3720be9d5526',
@@ -340,7 +409,10 @@ var images = [
 	'https://i.scdn.co/image/ab67616d0000b27392cd8ca03552bdf6dd5e8934',
 	'https://i.scdn.co/image/ab67616d0000b273db58320165892f952a6ddb3f',
 	'https://i.scdn.co/image/ab67616d0000b273c174bffb607ee576329291a6',
-	'https://i.scdn.co/image/ab67616d0000b273fce23dadb51975ebf2e9d75c'
+	'https://i.scdn.co/image/ab67616d0000b273fce23dadb51975ebf2e9d75c',
+	'https://i.scdn.co/image/ab67616d0000b2733dc26c67fc080a8a4c6c416e',
+	'https://i.scdn.co/image/ab67616d0000b2738ff0b15a20a57ffe79e4b49c',
+	'https://i.scdn.co/image/ab67616d0000b273410dd4054ccd5a57aba612d1'
 ];
 
 var ranking = [
@@ -414,7 +486,7 @@ var ranking = [
 '97',
 '97',
 '98',
-
+'90',
 '---',
 '---',
 '---',
@@ -639,9 +711,9 @@ var review = [
 'no opinion has been formed',
 'RTJ 3 is a fusion of 90s and modern hip hop with clever and biting lyrisism, and uniquely snappy production.',
 'Rodeo is without a doubt the best trap album ever made, with superb psycadellic production and one increadible song after the next.',
-'Good Kid, M.A.A.D. City is a 90s hip hop record with pop influence, with a rich autobiographical narrative about Compton',
+'Good Kid, M.A.A.D. City is a 90s hip hop record with pop influence, and a rich autobiographical narrative staring Compton',
 '1000 Gecs is such a unique blend of genres, to describe it as anything other than alvin and the chipmunks meets scrillex would do it a disservice.',
-
+'Bubba uses lush jazz samples and r&b vocals to make one of the most summery and chill sounds out there.',
 'no opinion has been formed',
 'no opinion has been formed',
 'no opinion has been formed',
@@ -830,6 +902,7 @@ var songs = [
 '90210, Maria I\'m Drunk, Ok Alright',
 'Money Trees, m.A.A.d City, Recipe',
 'Money Machine, Stupid Horse, Gec 2 Ü',
+'Do It, 10%, Vex Oh',
 'fav songs',
 'fav songs',
 'fav songs',
@@ -897,7 +970,7 @@ var songs = [
  
 var num = Math.floor( Math.random() * images.length );
 
-//var num = title.length-35; // for debuging newest albums
+//num = title.length-1; // debug
 
  var img = images[ num ];
 	var lnk = url [ num ];
@@ -910,18 +983,24 @@ var num = Math.floor( Math.random() * images.length );
 
 function getRandomTitle() {
 if(txt.length > 25) txt = txt.substring(0,25) + "...";
-	document.write("<a href='"+lnk+"'><img src='"+img+"'></a><br><br><p>"+txt+"<br>"+rnk+" of 100</p>");
-	    document.close();
-
+if (rnk=='---') {
+	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img src='"+img+"'></a><br><br><p>"+txt+"<br></p>");
+}
+else{
+	document.write("<style>body{background-image: url("+lnk+");.im{visibility:visable;}</style><a href='"+lnk+"'><img src='"+img+"'></a><br><br><p>"+txt+"<br></p>");
+}
+ document.close();
 }
 function infoCaption(){
-document.write(rev+"<br>-----------<br>"+mp3);
+document.write("<style>.aa{position: relative; left: 50%; transform: translateX(-50%);}</style><div class='aa'>"+rnk+"<br>-----------<br>"+rev+"<br>-----------<br>"+mp3+"</div>");
 	    document.close();
 }
 </script>
 
-
-<div class="album" style="background-color: white; padding-left: 15px; padding-right: 15px; padding-top: 35px; padding-bottom: 35px; border-width: 1px; border-style: solid;">
+<!--<a href="untitled.html" class="fa fa-music"></a>
+<a href="film.html" class="fa fa-film"></a>
+<a href="book.html" class="fa fa-book"></a>-->
+<div class="album" style="background-color: white; padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 35px; border-width: 1px; border-style: solid;">
 <script>getRandomTitle();</script>
 
 <button class="im" id="myBtn">info</button>
@@ -932,12 +1011,12 @@ document.write(rev+"<br>-----------<br>"+mp3);
   <div class="modal-content">
     <div class="modal-body">
     	<span style="visibility: hidden;" class="close">&times;</span><br>
-      <p style=" 
+      <div style=" 
 position: relative;
      margin-top: 30%;
   left: 50%;
   /* bring your own prefixes */
-  transform: translate(-50%, -50%);"><script>infoCaption();</script></p>
+  transform: translate(-50%, -50%);"><script>infoCaption();</script></div>
     </div>
   </div>
 
