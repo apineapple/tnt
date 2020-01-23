@@ -42,8 +42,16 @@
 			color: red;
 		}
 
-	
+	.album{
+		position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+	}
 
+.grow {transition: all .2s ease-in-out;}
+.grow:hover {transform: scale(1.2); color: blue !important;}
 
 
 /* Modal Content */
@@ -52,10 +60,10 @@
 .dropbtn {
   border: none;
   cursor: pointer;
+  padding-bottom: 40px;
 }
 
 .dropbtn:hover, .dropbtn:focus {
-  color: red;
 }
 
 .dropdown {
@@ -65,28 +73,42 @@
 
 .dropdown-content {
   display: none;
-  position: absolute;
+  position: fixed;
   min-width: 160px;
   overflow: auto;
   z-index: 1;
+  left: 70px;
+  top: 5px;
 }
 
 .dropdown-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
-  display: block;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+}
+.dropdown-content a:hover {
+  color: red;
+  transform: scale(1.2);
 }
 
 
-.show {display: block;}
+.show {display: inline-block;}
 
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
 	</style>
   </head>
   <body>
-<!--<video autoplay muted loop id="myVideo">
-  <source src="mp.mp4" type="video/mp4">
-</video>-->
+<video autoplay muted loop id="myVideo">
+  <source src="https://www.youtube.com/watch?v=oCveByMXd_0" type="video/mp4">
+</video>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -290,11 +312,9 @@ function getRandomTitle() {
 }
 
 </script>
-
 <div class="dropdown">
-  <a onclick="myFunction()" class="fa fa-clone dropbtn"></a>
+  <a onclick="myFunction()" class="fa fa-clone dropbtn grow"></a>
   <div id="myDropdown" class="dropdown-content">   
-<a href="index.html" class="fa fa-music"></a>
 <a href="film.html" class="fa fa-film"></a>
 <a href="book.html" class="fa fa-book"></a>
 <a href="https://www.albumoftheyear.org" class="fa fa-file-audio-o"></a>
@@ -323,12 +343,7 @@ window.onclick = function(event) {
   }
 }
 </script>
-
-<div class="album" style="  position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);">
+<div class="album">
 <script>getRandomTitle();</script>
 </div>
 <script>
