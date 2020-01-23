@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
+    <title>
+      Try New Things
+      </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+    img{
+      width: auto;
+      height: 300px;
+    }
+    .img{
+      width: 30px;
+      height: 30px;
+    }
+    a{
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+
+  
+
+
+
+/* Modal Content */
+
+/* Add Animation */
+
+
+  </style>
+  </head>
+  <body>
+<!--<video autoplay muted loop id="myVideo">
+  <source src="mp.mp4" type="video/mp4">
+</video>-->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script>
+// place your images in this array
+
+
+var images = [
+  'https://a.ltrbxd.com/resized/sm/upload/n7/aq/ro/w9/vK1o5rZGqxyovfIhZyMELhk03wO-0-460-0-690-crop.jpg?k=f5b13f1a95 2x',
+  'https://a.ltrbxd.com/resized/film-poster/5/8/9/2/5/5/589255-goldman-v-silverman-0-460-0-690-crop.jpg?k=edb7c48915 2x',
+  'https://a.ltrbxd.com/resized/film-poster/3/9/0/5/2/0/390520-us-0-460-0-690-crop.jpg?k=9788b7353d 2x',
+  'https://a.ltrbxd.com/resized/film-poster/4/5/8/2/4/6/458246-dolemite-is-my-name-0-460-0-690-crop.jpg?k=2560dd8e8a 2x',
+  'https://a.ltrbxd.com/resized/film-poster/2/6/9/3/5/8/269358-loving-vincent-0-460-0-690-crop.jpg?k=b6f1f6852b 2x',
+  'https://a.ltrbxd.com/resized/film-poster/1/3/9/7/9/5/139795-birdman-0-460-0-690-crop.jpg?k=5aee70e478 2x',
+  'https://a.ltrbxd.com/resized/film-poster/4/2/0/4/5/1/420451-eighth-grade-0-460-0-690-crop.jpg?k=f5b87e90a1 2x'
+
+];
+
+ 
+var num = Math.floor( Math.random() * images.length );
+
+//num = title.length-1; // debug
+  
+
+ var img = images[ num ];
+
+
+function getRandomTitle() {
+
+  document.write("<img src='"+img+"'><br><br><br>");
+
+ document.close();
+}
+</script>
+
+<div style="position: absolute; top: 0%;">
+<a href="untitled.html" class="fa fa-music"></a>
+<a href="film.html" class="fa fa-film"></a>
+<a href="book.html" class="fa fa-book"></a>
+</div>
+<div style="position: absolute; top: 0%; right: 10px;">
+<a href="https://www.albumoftheyear.org" class="fa  fa fa-file-audio-o"></a>
+<a href="https://letterboxd.com" class="fa fa-file-image-o"></a>
+</div>
+
+<div class="album" style="  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);">
+<script>getRandomTitle();</script>
+</div>
+<script>
+
+window.addEventListener("keydown", checkKeyPressed, false);
+
+function checkKeyPressed(evt) {
+    if (evt.keyCode == "13") {
+           window.location.reload();
+    }
+}
+</script>
+  </body>
+      </html>
