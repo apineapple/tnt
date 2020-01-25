@@ -48,13 +48,44 @@
 
   
 
+.dropbtn {
+  border: none;
+  cursor: pointer;
+}
 
+.dropbtn:hover, .dropbtn:focus {
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  overflow: auto;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.show {display: block;}
 
 /* Modal Content */
 
 /* Add Animation */
 
-
+.dropdown-content a:hover {
+  color: red;
+}
   </style>
   </head>
   <body>
@@ -129,15 +160,37 @@ function getRandomTitle() {
 }
 </script>
 
-<div style="position: fixed; top: 0%;">
-<a href="index.html" class="fa fa-music"></a>
-<a href="film.html" class="fa fa-film"></a>
+<div class="dropdown">
+  <a onclick="myFunction()" ondblclick="window.location.href='index.html'" class="fa fa-clone dropbtn"></a>
+  <div id="myDropdown" class="dropdown-content">   
+<a href="music.html" class="fa fa-music"></a>
 <a href="book.html" class="fa fa-book"></a>
-</div>
-<div style="position: fixed; top: 0%; right: 10px;">
 <a href="https://www.albumoftheyear.org" class="fa fa-file-audio-o"></a>
 <a href="https://letterboxd.com" class="fa fa-file-image-o"></a>
+  </div>
 </div>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
 
 <div class="album" style="position: fixed;
   top: 50%;
