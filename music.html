@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
+
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
+    <title>
+    	Try New Things
+			</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+		img{
+			width: 300px;
+			height: 300px;
+		}
+		a{
+			text-decoration: none;
+		}
+		a:hover{
+			text-decoration: none;
+			color: red;
+		}
+
+	.album{
+		position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+	}
+
+.grow {transition: all .2s ease-in-out;}
+.grow:hover {transform: scale(1.2); color: blue !important;}
+
+
+/* Modal Content */
+
+/* Add Animation */
+.dropbtn {
+  border: none;
+  cursor: pointer;
+  padding-bottom: 40px;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  min-width: 160px;
+  overflow: auto;
+  z-index: 1;
+  left: 70px;
+  top: 5px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all .2s ease-in-out;
+}
+.dropdown-content a:hover {
+  color: red;
+  transform: scale(1.2);
+}
+
+
+.show {display: inline-block;}
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+	</style>
+  </head>
+  <body>
+<video autoplay muted loop id="myVideo">
+  <source src="https://www.youtube.com/watch?v=oCveByMXd_0" type="video/mp4">
+</video>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		    <script>
+// place your images in this array
+
+
+
+
+var url= [
+'https://open.spotify.com/album/2yiX02xQ3Qo2fDXbfEQeS3',
+'https://open.spotify.com/album/3kEtdS2pH6hKcMU9Wioob1',
+'https://open.spotify.com/album/3tQd5mwBtVyxCoEo4htGAV',
+'https://open.spotify.com/album/7btiyhWzUfzxN3ijSiBpC8',
+'https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu',
+'https://open.spotify.com/album/0BBduHWw9CbB5dctxFp48f',
+'https://open.spotify.com/album/0cbpcdI4UySacPh5RCpDfo',
+'https://open.spotify.com/album/2guirTSEqLizK7j9i1MTTZ',
+'https://open.spotify.com/album/51WLEfPEEkzAWurvuY6Gco',
+'https://open.spotify.com/album/1kmyirVya5fRxdjsPFDM05',
+'https://open.spotify.com/album/18XFe4CPBgVezXkxZP6rTb',
+'https://open.spotify.com/album/3k8xoyOXkGgZxUKgpmxz4P',
+'https://open.spotify.com/album/04uhhcjGVCHodMgZjXOlye',
+'https://open.spotify.com/album/4EPQtdq6vvwxuYeQTrwDVY',
+'https://open.spotify.com/album/7dAm8ShwJLFm9SaJ6Yc58O',
+'https://open.spotify.com/album/5vRfIDOPJHy3W2wHWbzLlE',
+'https://open.spotify.com/album/6vGEX2ejVVsHTIsqI1teZg',
+'https://open.spotify.com/album/3kVs5uH5hbdeNwp4q0cyEi',
+'https://open.spotify.com/album/7ycBtnsMtyVbbwTfJwRjSP',
+'https://open.spotify.com/album/7dK54iZuOxXFarGhXwEXfF',
+'https://open.spotify.com/album/20U1UWeGcGq7JVW0tf8yfH',
+'https://open.spotify.com/album/7aNclGRxTysfh6z0d8671k',
+'https://open.spotify.com/album/7Et3bSTLLqdABO1qCxUplS',
+'https://open.spotify.com/album/43uErencdmuTRFZPG3zXL1',
+'https://open.spotify.com/album/5RA5hhLlbw31QfQRX11pwo',
+'https://open.spotify.com/album/7bvmGyFDwpHNRRRZJ0AHvn',
+'https://open.spotify.com/album/3ogNAkUhvQy0cFOfLoR6Y8',
+'https://open.spotify.com/album/4onPyHor2yOlVxCsIaGyHH',
+'https://open.spotify.com/album/4xwx0x7k6c5VuThz5qVqmV',
+'https://open.spotify.com/album/4anxEzh8xEKSPXKHGWiFue',
+'https://open.spotify.com/album/602bFcdb1Fof8HImMWxYvp',
+'https://open.spotify.com/album/1lgZgmdWGUt8Ypk5qgaRQH',
+'https://open.spotify.com/album/0ylicfYOxageLwo3uQxiWK',
+'https://open.spotify.com/album/5Ki4YFQrUx7hCcQx1LJUQb',
+'https://open.spotify.com/album/53VKICyqCf91sVkTdFrzKX',
+'https://open.spotify.com/album/4svcCm5yRZtKE0tXn4n1cn',
+'https://open.spotify.com/album/5asaxnymoPyghtKrUwJrwQ',
+'https://open.spotify.com/album/3e7vtKJ3m1zVh38VGq2g3H',
+'https://open.spotify.com/album/386IqvSuljaZsMjwDGGdLj',
+'https://open.spotify.com/album/4Wwm4xg2748zhYuzDRFTgY',
+'https://open.spotify.com/album/71QyofYesSsRMwFOTafnhB',
+'https://open.spotify.com/album/5zi7WsKlIiUXv09tbGLKsE',
+'https://open.spotify.com/album/2nkto6YNI4rUYTLqEwWJ3o',
+'https://open.spotify.com/album/48IFY1wERoy8Lac5FuXHpc',
+'https://open.spotify.com/album/67smHJOf5YlFwad6dAlppm',
+'https://open.spotify.com/album/0XnqQzdSFAml08XZoRt1St',
+'https://open.spotify.com/album/5c2AzoNyr46fCQM5d8mxE0',
+'https://open.spotify.com/album/3Mj4A4nNJzIdxOyS4yzOhj',
+'https://open.spotify.com/album/1jToVugwBEzcak8gJNZG2f',
+'https://open.spotify.com/album/5wtE5aLX5r7jOosmPhJhhk',
+'https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv',
+'https://open.spotify.com/album/66at85wgO2pu5CccvqUF6i',
+'https://open.spotify.com/album/1DNx0H5ZX1ax3yyRwtgT4S',
+'https://open.spotify.com/album/2Ek1q2haOnxVqhvVKqMvJe',
+'https://open.spotify.com/album/6pwuKxMUkNg673KETsXPUV',
+'https://open.spotify.com/album/7gsWAHLeT0w7es6FofOXk1',
+'https://open.spotify.com/album/15zcbfnEwQYqdNosjkrlfu',
+'https://open.spotify.com/album/6wi40lIjhukePWyXRKY7qO',
+'https://open.spotify.com/album/2NDlOOZNBvq6B26feV4gJc',
+'https://open.spotify.com/album/2hOYLjoRQFXcdviMiwtgxe',
+'https://open.spotify.com/album/6idVoBWP2mt1qoMtASm3gc',
+'https://open.spotify.com/album/7MyUIiX7nkyazdl4JqfMJK',
+'https://open.spotify.com/album/5JbeU5WL1WAGxy1u5fsOmf',
+'https://open.spotify.com/album/2PjlaxlMunGOUvcRzlTbtE',
+'https://open.spotify.com/album/7BUlAwJBzKyllRuDTKV8Ae',
+'https://open.spotify.com/album/4Loc7NtCAo9mypHO6kbviD',
+'https://open.spotify.com/album/3v2GjFB9V5kHgrOCXn3sI9',
+'https://open.spotify.com/album/4PWBTB6NYSKQwfo79I3prg',
+'https://open.spotify.com/album/1DqhWr73Fh5yoNzKLas0G3',
+'https://open.spotify.com/album/4CGanXs6KlVuXXdNrf82qE',
+'https://open.spotify.com/album/5FQ4sOGqRWUA5wO20AwPcO',
+'https://open.spotify.com/album/72ojHizmH0fKoZHX15gllP',
+'https://open.spotify.com/album/76290XdXVF9rPzGdNRWdCh',
+'https://open.spotify.com/album/3mH6qwIy9crq0I9YQbOuDf',
+'https://open.spotify.com/album/2Vx9FC6Um8i6kEtY7HNswB',
+'https://open.spotify.com/album/3Yko2SxDk4hc6fncIBQlcM',
+'https://open.spotify.com/album/5VqGGKeWpIBRFh4M4XmqDK',
+'https://open.spotify.com/album/2w1YJXWMIco6EBf0CovvVN',
+'https://open.spotify.com/album/4imRDpzmb4zwvxKhNzJhxr',
+'https://open.spotify.com/album/5XpEKORZ4y6OrCZSKsi46A',
+'https://open.spotify.com/album/19RUXBFyM4PpmrLRdtqWbp',
+'https://open.spotify.com/album/4GNIhgEGXzWGAefgN5qjdU',
+'https://open.spotify.com/album/5m9PLhWhhuKJyTEZpBg7SV',
+'https://open.spotify.com/album/5So31JibrTO74WvuCozsAb',
+'https://open.spotify.com/album/4e0s9NinQo02X4exDDmW65'
+
+];
+
+var images = [
+	'https://i.scdn.co/image/ab67616d0000b273a4950162a626593b7340f6c7',
+	'https://i.scdn.co/image/ab67616d0000b273b1178724f4be59abf7acc6c5',
+	'https://i.scdn.co/image/ab67616d0000b2735901aaa980d3e714bf01171c',
+	'https://i.scdn.co/image/ab67616d0000b2731e797f1552a1136091145fd9',
+	'https://i.scdn.co/image/ab67616d0000b273e52a59a28efa4773dd2bfe1b',
+	'https://i.scdn.co/image/7fcc784929677b4b0c480a387567bb8c1586532c',
+	'https://i.scdn.co/image/ab67616d0000b2733fb6bc46c932ca1ab168526a',
+	'https://i.scdn.co/image/d1e45852702e21c779fcb7fc5bc5d17552447c03',
+	'https://i.scdn.co/image/ab67616d0000b273f8aaeba5e6dee1745371e822',
+	'https://i.scdn.co/image/81b8ca9e78f44aca9e34be7f4a9252f5cf7de19f',
+	'https://i.scdn.co/image/ab67616d0000b273085b8dd2bebd2aaac895c78e',
+	'https://i.scdn.co/image/f0ce506327cba6e105aaa42f3a6be98770a2bc5f',
+	'https://i.scdn.co/image/ab67616d0000b273210c8f856757abec0806209c',
+	'https://i.scdn.co/image/ab67616d0000b27390b4e1905b1fc48c537ec053',
+	'https://i.scdn.co/image/acca2e7a1e842f02255f2f55b5a6292328f9fc07',
+	'https://i.scdn.co/image/ab67616d0000b27346f9bf1154c7205b0e8b1667',
+	'https://i.scdn.co/image/ab67616d0000b273f5da2c149c9b9d25ed41a87d',
+	'https://i.scdn.co/image/04d460afec536a267d91d087bfc7f28a9149ff35',
+	'https://i.scdn.co/image/4662ef2e309808ddb0ed7d8819df607350efdc33',
+	'https://i.scdn.co/image/ab67616d0000b27389992f4d7d4ab94937bf9e23',
+	'https://i.scdn.co/image/ab67616d0000b273e4221d183898a2c206626b64',
+	'https://i.scdn.co/image/ab67616d0000b27338906032688bb13b135ce19a',
+	'https://i.scdn.co/image/3c428a08ac4c3c8b85b4efad1f7a42a7a2867879',
+	'https://i.scdn.co/image/ab67616d0000b273d844f6b7311a69b9a08e7a0f',
+	'https://i.scdn.co/image/0ddf1d320dd3a96ca3a45666fbbb9e0a63735296',
+	'https://i.scdn.co/image/ab67616d0000b27347dd2ca47ec9bf14559e17c6',
+	'https://i.scdn.co/image/ab67616d0000b273b5979c45e4f23e95aefd6933',
+	'https://i.scdn.co/image/ab67616d0000b2737c489be841df6272caed47e9',
+	'https://i.scdn.co/image/6c47e597e0a8dd9b5a18abf16a203ba0003c8681',
+	'https://i.scdn.co/image/ab67616d0000b2735d6fb1541aad6c364a7fc369',
+	'https://i.scdn.co/image/176d5a7f186d09da5d03bc3f0208281833ba36f0',
+	'https://i.scdn.co/image/ab67616d0000b27311e0d6a100c4f93e293b1146',
+	'https://i.scdn.co/image/ab67616d0000b273c615312f90efceff73110ae2',
+	'https://i.scdn.co/image/ab67616d0000b2738fdd144d8a8e57db60c5c29d',
+	'https://i.scdn.co/image/ab67616d0000b2735676fba9c44ba772deb81727',
+	'https://i.scdn.co/image/ab67616d0000b2730bd2dd0041256bcca30a1d9a',
+	'https://i.scdn.co/image/473e49985ee7cea69a1c6e0d24d9787da4bf5c3a',
+	'https://i.scdn.co/image/ab67616d0000b2733e25c9ef701bb637773531fe',
+	'https://i.scdn.co/image/ab67616d0000b273cee4acc7bfe23bc75461a66c',
+	'https://i.scdn.co/image/ab67616d0000b2731c54fc953531d5da04232deb',
+	'https://i.scdn.co/image/ab67616d0000b273e71dd15fc5bdefd5bff70452',
+	'https://i.scdn.co/image/ab67616d0000b2737005885df706891a3c182a57',
+	'https://i.scdn.co/image/ab67616d0000b2738940ac99f49e44f59e6f7fb3',
+	'https://i.scdn.co/image/ab67616d0000b27346fc3effbd1b9af4c69019ac',
+	'https://i.scdn.co/image/ab67616d0000b273a0c4a585a7d73b4943b9bf13',
+	'https://i.scdn.co/image/ab67616d0000b2737d15fb20303a589acc1ab98b',
+	'https://i.scdn.co/image/ab67616d0000b273ef51817e6a6563b6f7ce5872',
+	'https://i.scdn.co/image/ab67616d0000b273de91214392394303e66d1cb6',
+	'https://i.scdn.co/image/ab67616d0000b27346f07fa4f28bf824840ddacb',
+	'https://i.scdn.co/image/ab67616d0000b273175c577a61aa13d4fb4b6534',
+	'https://i.scdn.co/image/d0747e2b961844569ec2f5a3d1e65083f30cf809',
+	'https://i.scdn.co/image/ab67616d0000b2732b688ab63b1a5f281cfdf451',
+	'https://i.scdn.co/image/ab67616d0000b2734a42166d927b3acce345c5c0',
+	'https://i.scdn.co/image/fa3ac7ac6d0d40f3fca5cf3845c03c717396ec24',
+	'https://i.scdn.co/image/ab67616d0000b273013c00ee367dd85396f79c82',
+	'https://i.scdn.co/image/5a8efefdba4562114d38e0deddd49635550f428c',
+	'https://i.scdn.co/image/ab67616d0000b2730d6056df5005ac0f1edf8e44',
+	'https://i.scdn.co/image/ab67616d0000b273595101c281d7e229e1f0e6c4',
+	'https://i.scdn.co/image/ab67616d0000b2735d084c9ce80631cbce8d84c2',
+	'https://i.scdn.co/image/ab67616d0000b2730d86ec6aa49e27bcc92b87f1',
+	'https://i.scdn.co/image/ab67616d0000b2737d05dd3ebb77cc048d66b294',
+	'https://i.scdn.co/image/ab67616d0000b273db4a7040705e9f54a93b139a',
+	'https://i.scdn.co/image/ab67616d0000b273ea2f8f07a050f8dc9ff93de0',
+	'https://i.scdn.co/image/ab67616d0000b2730a60fb0deda858270cca82ee',
+	'https://i.scdn.co/image/3f2580a1b82961dde5084bc41d9df6e971f8b44a',
+	'https://i.scdn.co/image/ab67616d0000b273e3a92b59ca220e9d14ccab60',
+	'https://i.scdn.co/image/ab67616d0000b2737106be2b3a106bbdd3949158',
+	'https://i.scdn.co/image/ab67616d0000b2737433176f037e0ba14190c34f',
+	'https://i.scdn.co/image/fd5d75466a6b0515919baf00e534c901a76d28a0',
+	'https://i.scdn.co/image/ab67616d0000b273acd9825c2d60ddee38f643b3',
+	'https://i.scdn.co/image/14ebdc93e4de87e03781b6409a7f5eeec1314606',
+	'https://i.scdn.co/image/ab67616d0000b2733fefe2f0500c4dfe5b491993',
+	'https://i.scdn.co/image/ab67616d0000b2734c79d5ec52a6d0302f3add25',
+	'https://i.scdn.co/image/ab67616d0000b273c5649add07ed3720be9d5526',
+	'https://i.scdn.co/image/9d3b0765cba6642ea88970336e7ae49753bb24e8',
+	'https://i.scdn.co/image/ab67616d0000b2731c4540d0ecafaa45305aa5a0',
+	'https://i.scdn.co/image/ab67616d0000b27378cbb644992050cfee639f39',
+	'https://i.scdn.co/image/ab67616d0000b2734ff4ced89fcfe48079c11b37',
+	'https://i.scdn.co/image/ab67616d0000b27392cd8ca03552bdf6dd5e8934',
+	'https://i.scdn.co/image/ab67616d0000b273db58320165892f952a6ddb3f',
+	'https://i.scdn.co/image/ab67616d0000b273c174bffb607ee576329291a6',
+	'https://i.scdn.co/image/ab67616d0000b273fce23dadb51975ebf2e9d75c',
+	'https://i.scdn.co/image/ab67616d0000b2733dc26c67fc080a8a4c6c416e',
+	'https://i.scdn.co/image/ab67616d0000b2738ff0b15a20a57ffe79e4b49c',
+	'https://i.scdn.co/image/ab67616d0000b273410dd4054ccd5a57aba612d1'
+];
+
+ 
+var num = Math.floor( Math.random() * images.length );
+
+// num = images.length-1; // debug
+
+ var img = images[ num ];
+	var lnk = url [ num ];
+
+function getRandomTitle() {
+
+	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img src='"+img+"'></a><br><br><br>");
+ document.close();
+}
+
+</script>
+<div class="dropdown">
+  <a onclick="myFunction()" ondblclick="window.location.href='index.html'" class="fa fa-clone dropbtn grow"></a>
+  <div id="myDropdown" class="dropdown-content"> 
+<a href="film.html" class="fa fa-film"></a>
+<a href="book.html" class="fa fa-book"></a>
+<a href="https://www.albumoftheyear.org" class="fa fa-file-audio-o"></a>
+<a href="https://letterboxd.com" class="fa fa-file-image-o"></a>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+<div class="album">
+<script>getRandomTitle();</script>
+</div>
+<script>
+
+window.addEventListener("keydown", checkKeyPressed, false);
+
+function checkKeyPressed(evt) {
+    if (evt.keyCode == "13") {
+           window.location.reload();
+    }
+}
+</script>
+  </body>
+	    </html>
