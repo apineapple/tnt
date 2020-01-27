@@ -18,21 +18,25 @@
     	Try New Things
 			</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
 
 .fa {
   padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  height: 50px;
+  font-size: 50px;
+  width: 70px;
+  height: 70px;
   text-align: center;
   text-decoration: none;
   color: black;
-  margin-right: 10px;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
 }
 		img{
-			width: 300px;
-			height: 300px;
+			width: 100px;
+			height: 100px;
 		}
 		a{
 			text-decoration: none;
@@ -51,64 +55,16 @@
 	}
 
 .grow {transition: all .2s ease-in-out;}
-.grow:hover {transform: scale(1.2); color: blue !important;}
+.grow:hover {transform: scale(1.1); color: blue !important;}
 
 
 /* Modal Content */
 
 /* Add Animation */
-.dropbtn {
-  border: none;
-  cursor: pointer;
-  padding-bottom: 40px;
-}
-
-.dropbtn:hover, .dropbtn:focus {
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  display: none;
-  position: fixed;
-  min-width: 160px;
-  overflow: auto;
-  z-index: 1;
-  left: 70px;
-  top: 5px;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: inline-block;
-  transition: all .2s ease-in-out;
-}
-.dropdown-content a:hover {
-  color: red;
-  transform: scale(1.2);
-}
-
-
-.show {display: inline-block;}
-
-video {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
 	</style>
   </head>
   <body>
-<video autoplay muted loop id="myVideo">
-  <source src="https://www.youtube.com/watch?v=oCveByMXd_0" type="video/mp4">
-</video>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -205,7 +161,18 @@ var url= [
 'https://open.spotify.com/album/4GNIhgEGXzWGAefgN5qjdU',
 'https://open.spotify.com/album/5m9PLhWhhuKJyTEZpBg7SV',
 'https://open.spotify.com/album/5So31JibrTO74WvuCozsAb',
-'https://open.spotify.com/album/4e0s9NinQo02X4exDDmW65'
+'https://open.spotify.com/album/4e0s9NinQo02X4exDDmW65',
+'https://open.spotify.com/album/4UG3kz6qoHtNI1glQ2wdon',
+'https://open.spotify.com/album/1dZZh7PvVgce1DDsDPzy8Z',
+'https://open.spotify.com/album/1QESrfmlfAl19Gr8mXcysi',
+'https://open.spotify.com/album/50156iq4owa0BXegpAf1Mg',
+'https://open.spotify.com/album/4vt0V1SmkaK1Y440P5Nsb4',
+'https://open.spotify.com/album/6JF49ixyHmOgS0Rsda2k42',
+'https://open.spotify.com/album/7Cw4LObzgnVqSlkuIyywtI',
+'https://open.spotify.com/album/1A3nVEWRJ8yvlPzawHI1pQ',
+'https://open.spotify.com/album/504XSXhUJlzztcMV4YMaDV',
+'https://open.spotify.com/album/2HaqChIDc5go3qxVunBDK0',
+'https://open.spotify.com/album/5sY6UIQ32GqwMLAfSNEaXb'
 
 ];
 
@@ -294,58 +261,81 @@ var images = [
 	'https://i.scdn.co/image/ab67616d0000b273fce23dadb51975ebf2e9d75c',
 	'https://i.scdn.co/image/ab67616d0000b2733dc26c67fc080a8a4c6c416e',
 	'https://i.scdn.co/image/ab67616d0000b2738ff0b15a20a57ffe79e4b49c',
-	'https://i.scdn.co/image/ab67616d0000b273410dd4054ccd5a57aba612d1'
+	'https://i.scdn.co/image/ab67616d0000b273410dd4054ccd5a57aba612d1',
+	'https://i.scdn.co/image/ab67616d0000b273f56213eede5f2e6a6065fb6d',
+	'https://i.scdn.co/image/ab67616d0000b27342c18fe458181bc13d08070a',
+	'https://i.scdn.co/image/88831b44e5315242100fa1b7902b62807421b164',
+	'https://i.scdn.co/image/fad1e4e15dcb7c5407d610830ead6ff86937bcd7',
+	'https://i.scdn.co/image/ab67616d0000b273863a30c04dd17e33a627fd31',
+	'https://i.scdn.co/image/ab67616d0000b273986cd6b330f7405b17a604f4',
+	'https://i.scdn.co/image/ab67616d0000b273683757f1fd40a7f7ef64bec1',
+	'https://i.scdn.co/image/ab67616d0000b273a2b1d3e73c66663c01351bcf',
+	'https://i.scdn.co/image/ab67616d0000b27347b803d47dbbe406bd738de5',
+	'https://i.scdn.co/image/ab67616d0000b2734d3fa5ce7ba599f4fd7803ef',
+	'https://i.scdn.co/image/bb2ef71c9576794699222ef73a00a0a1a8ddd3db'
 ];
 
  
 var num = Math.floor( Math.random() * images.length );
 
-// num = images.length-1; // debug
-
  var img = images[ num ];
 	var lnk = url [ num ];
 
+
+
+
+
+//num = images.length-1; // debug
+
+ 
+
+
 function getRandomTitle() {
 
-	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img src='"+img+"'></a><br><br><br>");
+	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:300px; height:300px;' src='"+img+"'></a>");
  document.close();
 }
 
-</script>
-<div class="dropdown">
-  <a onclick="myFunction()" ondblclick="window.location.href='index.html'" class="fa fa-clone dropbtn grow"></a>
-  <div id="myDropdown" class="dropdown-content"> 
-<a href="film.html" class="fa fa-film"></a>
-<a href="book.html" class="fa fa-book"></a>
-<a href="https://www.albumoftheyear.org" class="fa fa-file-audio-o"></a>
-<a href="https://letterboxd.com" class="fa fa-file-image-o"></a>
-  </div>
-</div>
+var imnum = 0;
+var imnumb = 1;
+var imnumc = 2;
+function getAllTitle(){
+while (imnum < images.length) {
+var imgn = images[ imnum ];
+var lnkn = url [ imnum ];
+var imgnb = images[ imnumb ];
+var lnknb = url [ imnumb];
+var imgnc = images[ imnumc];
+var lnknc = url [ imnumc ] ;
 
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
+  document.write("<style>.grid-container {display: grid; width:20%; margin-left: 40%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:15px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:15px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='"+lnknc+"'><img src='"+imgnc+"'></a></div></div>");
+  imnum=imnum+3;
+  imnumb= imnumb+3;
+  imnumc= imnumc + 3;
+}
 }
 
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 </script>
-<div class="album">
+ 
+
+  <a style="" href="index.html" class="fa fa-clone grow"></a>
+
+
+<div class="album" id="randdemo" style='visibility: visible;'>
 <script>getRandomTitle();</script>
 </div>
+
+<div id="alldemo" style="display: none; margin-top: 10%;"><script class="potato">getAllTitle();</script></div>
+
+<button id="button" style="border: 1px black solid; position: fixed; bottom: 10px; left: 10px;">show all</button>
+
+<script>
+$("#button").click(function(){
+  $("#alldemo").toggle();
+  $("#randdemo").toggle();
+});
+</script>
+
 <script>
 
 window.addEventListener("keydown", checkKeyPressed, false);
@@ -356,5 +346,6 @@ function checkKeyPressed(evt) {
     }
 }
 </script>
+
   </body>
 	    </html>
