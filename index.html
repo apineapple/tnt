@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+ <html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -23,8 +23,8 @@
 .fa {
   padding: 20px;
   font-size: 50px;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   text-align: center;
   text-decoration: none;
   color: black;
@@ -84,24 +84,26 @@
   left: 20px;
   top: 40px;
 }
+
+.gro {transition: all .2s ease-in-out;}
+.gro:hover {transform: scale(1.1); color: blue !important;}
+
+.grow {transition: all .2s ease-in-out;}
+.grow:hover {transform: scale(1.1);}
   </style>
+
   </head>
   <body>
-<!--<video autoplay muted loop id="myVideo">
-  <source src="mp.mp4" type="video/mp4">
-</video>-->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
+  <a href="javascript:history.go(-1)" class="fa fa-times  gro"></a>
 
 <div class="dropdown">
  
   <div id="myDropdown" class="dropdown-content">   
-<a href="music.html" class="fa fa-music"></a>
-<a href="book.html" class="fa fa-book"></a>
+<a href="music.html" class="fa fa-music grow"></a>
+<a href="film.html" class="fa fa-film grow"></a>
 <br>
-<a href="https://www.albumoftheyear.org" class="fa fa-file-audio-o"></a>
-<a href="https://letterboxd.com" class="fa fa-file-image-o"></a>
+<a href="https://www.albumoftheyear.org" class="fa fa-file-audio-o grow"></a>
+<a href="https://letterboxd.com" class="fa fa-file-image-o grow"></a>
   </div>
 </div>
 
