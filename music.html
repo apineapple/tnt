@@ -308,7 +308,7 @@ var lnknb = url [ imnumb];
 var imgnc = images[ imnumc];
 var lnknc = url [ imnumc ] ;
 
-  document.write("<style>.grid-container {display: grid; width:20%; margin-left: 40%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:15px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:15px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='"+lnknc+"'><img src='"+imgnc+"'></a></div></div>");
+  document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='"+lnknc+"'><img src='"+imgnc+"'></a></div></div>");
   imnum=imnum+3;
   imnumb= imnumb+3;
   imnumc= imnumc + 3;
@@ -324,10 +324,13 @@ var lnknc = url [ imnumc ] ;
 <div class="album" id="randdemo" style='visibility: visible;'>
 <script>getRandomTitle();</script>
 </div>
+<div id="alldemo" style="display: none; position: fixed;
+  left: 50%;
+  top:50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%); overflow-y: scroll; height: 100% !important;"><script class="potato">getAllTitle();</script></div>
 
-<div id="alldemo" style="display: none; margin-top: 10%;"><script class="potato">getAllTitle();</script></div>
-
-<button id="button" style="border: 1px black solid; position: fixed; bottom: 10px; left: 10px;">show all</button>
+<button id="button" style="border: 1px black solid; position: fixed; bottom: 50px; left: 20px;">show</button>
 
 <script>
 $("#button").click(function(){
