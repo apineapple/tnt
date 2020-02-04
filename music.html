@@ -21,7 +21,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <style>
 
-.fa {
+.fa-clone {
   padding: 20px;
   font-size: 50px;
   width: 70px;
@@ -32,6 +32,19 @@
   position: fixed;
   z-index: 999;
   top: 0;
+  left: 0;
+}
+.fa-expand {
+  padding: 20px;
+  font-size: 50px;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  position: fixed;
+  z-index: 999;
+  bottom: 50px;
   left: 0;
 }
 		img{
@@ -318,19 +331,19 @@ var lnknc = url [ imnumc ] ;
 </script>
  
 
-  <a style="" href="index.html" class="fa fa-clone grow"></a>
+  <a href="index.html" class="fa fa-clone grow"></a>
 
 
 <div class="album" id="randdemo" style='visibility: visible;'>
 <script>getRandomTitle();</script>
 </div>
 <div id="alldemo" style="display: none; position: fixed;
-  left: 50%;
+  left: 60%;
   top:50%;
   /* bring your own prefixes */
   transform: translate(-50%, -50%); overflow-y: scroll; height: 100% !important;"><script class="potato">getAllTitle();</script></div>
 
-<button id="button" style="border: 1px black solid; position: fixed; bottom: 50px; left: 20px;">show</button>
+<i id="button" class="fa fa-expand grow"></i>
 
 <script>
 $("#button").click(function(){
