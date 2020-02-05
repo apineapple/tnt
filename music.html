@@ -48,8 +48,8 @@
   left: 0;
 }
 		img{
-			width: 88.3333333px;
-			height: 88.333333px;
+			width: 93.3333333px;
+			height: 93.333333px;
 			border-radius: 5px;
 		}
 		a{
@@ -307,7 +307,7 @@ var num = Math.floor( Math.random() * images.length );
 
 function getRandomTitle() {
 
-	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='https://open.spotify.com/album/"+lnk+"'><img style='width:295px; height:295px;' src='https://i.scdn.co/image/"+img+"'></a>");
+	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='https://open.spotify.com/album/"+lnk+"'><img style='width:300px; height:300px;' src='https://i.scdn.co/image/"+img+"'></a>");
  document.close();
 }
 
@@ -325,19 +325,19 @@ var lnknc = url [ imnumc ] ;
 
 if (imgn != null && imgnb != null && imgnc != null){
 
-  document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
+  document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
 
 }
 
 else if (imgn != null && imgnc == null && imgnb != null){
 
-  document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'></div></div>");
+  document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'></div></div>");
 
 }
 
 else if (imgnb == null){
 
- document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
+ document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
 }
 
   imnum=imnum+3;
@@ -363,7 +363,7 @@ else if (imgnb == null){
   left: 50%;
   top:50%;
   /* bring your own prefixes */
-  transform: translate(-50%, -50%); overflow-y: scroll; height: 100% !important;"><script class="potato">getAllTitle();</script></div>
+  transform: translate(-50%, -50%); overflow-y: scroll; height: 300px !important;"><script class="potato">getAllTitle();</script></div>
 
 
 <script>
