@@ -50,6 +50,7 @@
 		img{
 			width: 100px;
 			height: 100px;
+			border-radius: 5px;
 		}
 		a{
 			text-decoration: none;
@@ -187,7 +188,10 @@ var url= [
 '2HaqChIDc5go3qxVunBDK0',
 '5sY6UIQ32GqwMLAfSNEaXb',
 '4eLPsYPBmXABThSJ821sqY',
-'1pnXY39h7XjEYGmS6PeKUZ'
+'1pnXY39h7XjEYGmS6PeKUZ',
+
+
+'last'
 
 ];
 
@@ -289,7 +293,9 @@ var images = [
 	'ab67616d0000b2734d3fa5ce7ba599f4fd7803ef',
 	'bb2ef71c9576794699222ef73a00a0a1a8ddd3db',
 	'4490d819e1436c1ea450ef9e125726c1959ff4ee',
-	'ab67616d0000b273e3cfb367ec496e725ad947f1'
+	'ab67616d0000b273e3cfb367ec496e725ad947f1',
+
+	'last'
 ];
 
  
@@ -313,7 +319,7 @@ var imnum = 0;
 var imnumb = 1;
 var imnumc = 2;
 function getAllTitle(){
-while (imnum < images.length) {
+while (imnum < images.length-1) {
 var imgn = images[ imnum ];
 var lnkn = url [ imnum ];
 var imgnb = images[ imnumb ];
@@ -321,10 +327,28 @@ var lnknb = url [ imnumb];
 var imgnc = images[ imnumc];
 var lnknc = url [ imnumc ] ;
 
+if (imgn != "last" && imgnb != "last" && imgnc != "last"){
+
   document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
+
+}
+
+else if (imgn != "last" && imgnc == "last" && imgnb != "last"){
+
+  document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'></div></div>");
+
+}
+
+else if (imgnb == "last"){
+
+ document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 15px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
+
+}
+
   imnum=imnum+3;
   imnumb= imnumb+3;
   imnumc= imnumc + 3;
+
 }
 }
 
