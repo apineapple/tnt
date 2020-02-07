@@ -1,385 +1,390 @@
+
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
+      <title>
+         tnt
+      </title>
+      <link rel="shortcut icon" style="border-radius: 50% !important;" type="image/x-icon" href="icon.ico" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <style>
+         .fa-clone {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0;
+         left: 0;
+         }
+         .fa-archive {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0;
+         left: 80px;
+         }
+         img{
+         width: 93.3333333px;
+         height: 93.333333px;
+         border-radius: 5px;
+         }
+         a{
+         text-decoration: none;
+         }
+         a:hover{
+         text-decoration: none;
+         color: black;
+         }
+         .album{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
+         /* Modal Content */
+         /* Add Animation */
+      </style>
+   </head>
+   <body>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script>
+         // place your images in this array
+         
+         
+         
+         
+         var url= [
+         '2yiX02xQ3Qo2fDXbfEQeS3',
+         '3kEtdS2pH6hKcMU9Wioob1',
+         '3tQd5mwBtVyxCoEo4htGAV',
+         '7btiyhWzUfzxN3ijSiBpC8',
+         '0BwWUstDMUbgq2NYONRqlu',
+         '0BBduHWw9CbB5dctxFp48f',
+         '0cbpcdI4UySacPh5RCpDfo',
+         '2guirTSEqLizK7j9i1MTTZ',
+         '51WLEfPEEkzAWurvuY6Gco',
+         '1kmyirVya5fRxdjsPFDM05',
+         '18XFe4CPBgVezXkxZP6rTb',
+         '3k8xoyOXkGgZxUKgpmxz4P',
+         '04uhhcjGVCHodMgZjXOlye',
+         '4EPQtdq6vvwxuYeQTrwDVY',
+         '7dAm8ShwJLFm9SaJ6Yc58O',
+         '5vRfIDOPJHy3W2wHWbzLlE',
+         '6vGEX2ejVVsHTIsqI1teZg',
+         '3kVs5uH5hbdeNwp4q0cyEi',
+         '7ycBtnsMtyVbbwTfJwRjSP',
+         '7dK54iZuOxXFarGhXwEXfF',
+         '20U1UWeGcGq7JVW0tf8yfH',
+         '7aNclGRxTysfh6z0d8671k',
+         '7Et3bSTLLqdABO1qCxUplS',
+         '43uErencdmuTRFZPG3zXL1',
+         '5RA5hhLlbw31QfQRX11pwo',
+         '7bvmGyFDwpHNRRRZJ0AHvn',
+         '3ogNAkUhvQy0cFOfLoR6Y8',
+         '4onPyHor2yOlVxCsIaGyHH',
+         '4xwx0x7k6c5VuThz5qVqmV',
+         '4anxEzh8xEKSPXKHGWiFue',
+         '602bFcdb1Fof8HImMWxYvp',
+         '1lgZgmdWGUt8Ypk5qgaRQH',
+         '0ylicfYOxageLwo3uQxiWK',
+         '5Ki4YFQrUx7hCcQx1LJUQb',
+         '53VKICyqCf91sVkTdFrzKX',
+         '4svcCm5yRZtKE0tXn4n1cn',
+         '5asaxnymoPyghtKrUwJrwQ',
+         '3e7vtKJ3m1zVh38VGq2g3H',
+         '386IqvSuljaZsMjwDGGdLj',
+         '4Wwm4xg2748zhYuzDRFTgY',
+         '71QyofYesSsRMwFOTafnhB',
+         '5zi7WsKlIiUXv09tbGLKsE',
+         '2nkto6YNI4rUYTLqEwWJ3o',
+         '48IFY1wERoy8Lac5FuXHpc',
+         '67smHJOf5YlFwad6dAlppm',
+         '0XnqQzdSFAml08XZoRt1St',
+         '5c2AzoNyr46fCQM5d8mxE0',
+         '3Mj4A4nNJzIdxOyS4yzOhj',
+         '1jToVugwBEzcak8gJNZG2f',
+         '5wtE5aLX5r7jOosmPhJhhk',
+         '20r762YmB5HeofjMCiPMLv',
+         '66at85wgO2pu5CccvqUF6i',
+         '1DNx0H5ZX1ax3yyRwtgT4S',
+         '2Ek1q2haOnxVqhvVKqMvJe',
+         '6pwuKxMUkNg673KETsXPUV',
+         '7gsWAHLeT0w7es6FofOXk1',
+         '15zcbfnEwQYqdNosjkrlfu',
+         '6wi40lIjhukePWyXRKY7qO',
+         '2NDlOOZNBvq6B26feV4gJc',
+         '2hOYLjoRQFXcdviMiwtgxe',
+         '6idVoBWP2mt1qoMtASm3gc',
+         '7MyUIiX7nkyazdl4JqfMJK',
+         '5JbeU5WL1WAGxy1u5fsOmf',
+         '2PjlaxlMunGOUvcRzlTbtE',
+         '7BUlAwJBzKyllRuDTKV8Ae',
+         '4Loc7NtCAo9mypHO6kbviD',
+         '3v2GjFB9V5kHgrOCXn3sI9',
+         '4PWBTB6NYSKQwfo79I3prg',
+         '1DqhWr73Fh5yoNzKLas0G3',
+         '4CGanXs6KlVuXXdNrf82qE',
+         '5FQ4sOGqRWUA5wO20AwPcO',
+         '72ojHizmH0fKoZHX15gllP',
+         '76290XdXVF9rPzGdNRWdCh',
+         '3mH6qwIy9crq0I9YQbOuDf',
+         '2Vx9FC6Um8i6kEtY7HNswB',
+         '3Yko2SxDk4hc6fncIBQlcM',
+         '5VqGGKeWpIBRFh4M4XmqDK',
+         '2w1YJXWMIco6EBf0CovvVN',
+         '4imRDpzmb4zwvxKhNzJhxr',
+         '5XpEKORZ4y6OrCZSKsi46A',
+         '19RUXBFyM4PpmrLRdtqWbp',
+         '4GNIhgEGXzWGAefgN5qjdU',
+         '5m9PLhWhhuKJyTEZpBg7SV',
+         '5So31JibrTO74WvuCozsAb',
+         '4e0s9NinQo02X4exDDmW65',
+         '4UG3kz6qoHtNI1glQ2wdon',
+         '1dZZh7PvVgce1DDsDPzy8Z',
+         '1QESrfmlfAl19Gr8mXcysi',
+         '50156iq4owa0BXegpAf1Mg',
+         '4vt0V1SmkaK1Y440P5Nsb4',
+         '6JF49ixyHmOgS0Rsda2k42',
+         '7Cw4LObzgnVqSlkuIyywtI',
+         '1A3nVEWRJ8yvlPzawHI1pQ',
+         '504XSXhUJlzztcMV4YMaDV',
+         '2HaqChIDc5go3qxVunBDK0',
+         '5sY6UIQ32GqwMLAfSNEaXb',
+         '4eLPsYPBmXABThSJ821sqY',
+         '1pnXY39h7XjEYGmS6PeKUZ',
+         '6Ulu31dfRTpIAud08ZIhXd'
+         
+         ];
+         
+         var images = [
+         	'ab67616d0000b273a4950162a626593b7340f6c7',
+         	'ab67616d0000b273b1178724f4be59abf7acc6c5',
+         	'ab67616d0000b2735901aaa980d3e714bf01171c',
+         	'ab67616d0000b2731e797f1552a1136091145fd9',
+         	'ab67616d0000b273e52a59a28efa4773dd2bfe1b',
+         	'7fcc784929677b4b0c480a387567bb8c1586532c',
+         	'ab67616d0000b2733fb6bc46c932ca1ab168526a',
+         	'd1e45852702e21c779fcb7fc5bc5d17552447c03',
+         	'ab67616d0000b273f8aaeba5e6dee1745371e822',
+         	'81b8ca9e78f44aca9e34be7f4a9252f5cf7de19f',
+         	'ab67616d0000b273085b8dd2bebd2aaac895c78e',
+         	'f0ce506327cba6e105aaa42f3a6be98770a2bc5f',
+         	'ab67616d0000b273210c8f856757abec0806209c',
+         	'ab67616d0000b27390b4e1905b1fc48c537ec053',
+         	'acca2e7a1e842f02255f2f55b5a6292328f9fc07',
+         	'ab67616d0000b27346f9bf1154c7205b0e8b1667',
+         	'ab67616d0000b273f5da2c149c9b9d25ed41a87d',
+         	'04d460afec536a267d91d087bfc7f28a9149ff35',
+         	'4662ef2e309808ddb0ed7d8819df607350efdc33',
+         	'ab67616d0000b27389992f4d7d4ab94937bf9e23',
+         	'ab67616d0000b273e4221d183898a2c206626b64',
+         	'ab67616d0000b27338906032688bb13b135ce19a',
+         	'3c428a08ac4c3c8b85b4efad1f7a42a7a2867879',
+         	'ab67616d0000b273d844f6b7311a69b9a08e7a0f',
+         	'0ddf1d320dd3a96ca3a45666fbbb9e0a63735296',
+         	'ab67616d0000b27347dd2ca47ec9bf14559e17c6',
+         	'ab67616d0000b273b5979c45e4f23e95aefd6933',
+         	'ab67616d0000b2737c489be841df6272caed47e9',
+         	'6c47e597e0a8dd9b5a18abf16a203ba0003c8681',
+         	'ab67616d0000b2735d6fb1541aad6c364a7fc369',
+         	'176d5a7f186d09da5d03bc3f0208281833ba36f0',
+         	'ab67616d0000b27311e0d6a100c4f93e293b1146',
+         	'ab67616d0000b273c615312f90efceff73110ae2',
+         	'ab67616d0000b2738fdd144d8a8e57db60c5c29d',
+         	'ab67616d0000b2735676fba9c44ba772deb81727',
+         	'ab67616d0000b2730bd2dd0041256bcca30a1d9a',
+         	'473e49985ee7cea69a1c6e0d24d9787da4bf5c3a',
+         	'ab67616d0000b2733e25c9ef701bb637773531fe',
+         	'ab67616d0000b273cee4acc7bfe23bc75461a66c',
+         	'ab67616d0000b2731c54fc953531d5da04232deb',
+         	'ab67616d0000b273e71dd15fc5bdefd5bff70452',
+         	'ab67616d0000b2737005885df706891a3c182a57',
+         	'ab67616d0000b2738940ac99f49e44f59e6f7fb3',
+         	'ab67616d0000b27346fc3effbd1b9af4c69019ac',
+         	'ab67616d0000b273a0c4a585a7d73b4943b9bf13',
+         	'ab67616d0000b2737d15fb20303a589acc1ab98b',
+         	'ab67616d0000b273ef51817e6a6563b6f7ce5872',
+         	'ab67616d0000b273de91214392394303e66d1cb6',
+         	'ab67616d0000b27346f07fa4f28bf824840ddacb',
+         	'ab67616d0000b273175c577a61aa13d4fb4b6534',
+         	'd0747e2b961844569ec2f5a3d1e65083f30cf809',
+         	'ab67616d0000b2732b688ab63b1a5f281cfdf451',
+         	'ab67616d0000b2734a42166d927b3acce345c5c0',
+         	'fa3ac7ac6d0d40f3fca5cf3845c03c717396ec24',
+         	'ab67616d0000b273013c00ee367dd85396f79c82',
+         	'5a8efefdba4562114d38e0deddd49635550f428c',
+         	'ab67616d0000b2730d6056df5005ac0f1edf8e44',
+         	'ab67616d0000b273595101c281d7e229e1f0e6c4',
+         	'ab67616d0000b2735d084c9ce80631cbce8d84c2',
+         	'ab67616d0000b2730d86ec6aa49e27bcc92b87f1',
+         	'ab67616d0000b2737d05dd3ebb77cc048d66b294',
+         	'ab67616d0000b273db4a7040705e9f54a93b139a',
+         	'ab67616d0000b273ea2f8f07a050f8dc9ff93de0',
+         	'ab67616d0000b2730a60fb0deda858270cca82ee',
+         	'3f2580a1b82961dde5084bc41d9df6e971f8b44a',
+         	'ab67616d0000b273e3a92b59ca220e9d14ccab60',
+         	'ab67616d0000b2737106be2b3a106bbdd3949158',
+         	'ab67616d0000b2737433176f037e0ba14190c34f',
+         	'fd5d75466a6b0515919baf00e534c901a76d28a0',
+         	'ab67616d0000b273acd9825c2d60ddee38f643b3',
+         	'14ebdc93e4de87e03781b6409a7f5eeec1314606',
+         	'ab67616d0000b2733fefe2f0500c4dfe5b491993',
+         	'ab67616d0000b2734c79d5ec52a6d0302f3add25',
+         	'ab67616d0000b273c5649add07ed3720be9d5526',
+         	'9d3b0765cba6642ea88970336e7ae49753bb24e8',
+         	'ab67616d0000b2731c4540d0ecafaa45305aa5a0',
+         	'ab67616d0000b27378cbb644992050cfee639f39',
+         	'ab67616d0000b2734ff4ced89fcfe48079c11b37',
+         	'ab67616d0000b27392cd8ca03552bdf6dd5e8934',
+         	'ab67616d0000b273db58320165892f952a6ddb3f',
+         	'ab67616d0000b273c174bffb607ee576329291a6',
+         	'ab67616d0000b273fce23dadb51975ebf2e9d75c',
+         	'ab67616d0000b2733dc26c67fc080a8a4c6c416e',
+         	'ab67616d0000b2738ff0b15a20a57ffe79e4b49c',
+         	'ab67616d0000b273410dd4054ccd5a57aba612d1',
+         	'ab67616d0000b273f56213eede5f2e6a6065fb6d',
+         	'ab67616d0000b27342c18fe458181bc13d08070a',
+         	'88831b44e5315242100fa1b7902b62807421b164',
+         	'fad1e4e15dcb7c5407d610830ead6ff86937bcd7',
+         	'ab67616d0000b273863a30c04dd17e33a627fd31',
+         	'ab67616d0000b273986cd6b330f7405b17a604f4',
+         	'ab67616d0000b273683757f1fd40a7f7ef64bec1',
+         	'ab67616d0000b273a2b1d3e73c66663c01351bcf',
+         	'ab67616d0000b27347b803d47dbbe406bd738de5',
+         	'ab67616d0000b2734d3fa5ce7ba599f4fd7803ef',
+         	'bb2ef71c9576794699222ef73a00a0a1a8ddd3db',
+         	'4490d819e1436c1ea450ef9e125726c1959ff4ee',
+         	'ab67616d0000b273e3cfb367ec496e725ad947f1',
+         	'ab67616d0000b273ed66c55b0d199553e3f2ac55',
+         	'ab67616d0000b273f5836791fd265b08343034cd'
+         
+         ];
+         
+          
+         var num = Math.floor( Math.random() * images.length );
+         
+         //num = images.length-1; // debug
+         
+         
+          var img = images[ num ];
+         	var lnk = url [ num ];
+          
+         
+         
+         function getRandomTitle() {
+         
+         	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='https://open.spotify.com/album/"+lnk+"'><img style='width:300px; height:300px;' src='https://i.scdn.co/image/"+img+"'></a>");
+          document.close();
+         }
+         
+         var imnum = 0;
+         var imnumb = 1;
+         var imnumc = 2;
+         var imnumd = 3;
+         
+         function getAllTitle(){
+         while (imnum < images.length) {
+         var imgn = images[ imnum ];
+         var lnkn = url [ imnum ];
+         var imgnb = images[ imnumb ];
+         var lnknb = url [ imnumb];
+         var imgnc = images[ imnumc];
+         var lnknc = url [ imnumc ] ;
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+         if (imnumd <= images.length && imgn != null && imgnb != null && imgnc != null) { //all rows except the last one
+         
+           document.write("<style>.grid-containera {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
+         
+         }
+         
+         else if (imnumd > images.length && imgn != null && imgnb != null && imgnc != null){ //the last row if it has 3 images
+         
+         	document.write("<style>.grid-containerb {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
 
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
-
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
-
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
-    <title>
-    	Try New Things
-			</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<style>
-
-.fa-clone {
-  padding: 20px;
-  font-size: 50px;
-  width: 70px;
-  height: 70px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
-}
-.fa-archive {
-  padding: 20px;
-  font-size: 50px;
-  width: 70px;
-  height: 70px;
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  position: fixed;
-  z-index: 999;
-  top: 70px;
-  left: 0;
-}
-		img{
-			width: 93.3333333px;
-			height: 93.333333px;
-			border-radius: 5px;
-		}
-		a{
-			text-decoration: none;
-		}
-		a:hover{
-			text-decoration: none;
-			color: red;
-		}
-
-	.album{
-		position: fixed;
-  top: 50%;
-  left: 50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%);
-	}
-
-.grow {transition: all .2s ease-in-out;}
-.grow:hover {transform: scale(1.1); color: blue !important;}
-
-
-/* Modal Content */
-
-/* Add Animation */
-	</style>
-  </head>
-  <body>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		    <script>
-// place your images in this array
-
-
-
-
-var url= [
-'2yiX02xQ3Qo2fDXbfEQeS3',
-'3kEtdS2pH6hKcMU9Wioob1',
-'3tQd5mwBtVyxCoEo4htGAV',
-'7btiyhWzUfzxN3ijSiBpC8',
-'0BwWUstDMUbgq2NYONRqlu',
-'0BBduHWw9CbB5dctxFp48f',
-'0cbpcdI4UySacPh5RCpDfo',
-'2guirTSEqLizK7j9i1MTTZ',
-'51WLEfPEEkzAWurvuY6Gco',
-'1kmyirVya5fRxdjsPFDM05',
-'18XFe4CPBgVezXkxZP6rTb',
-'3k8xoyOXkGgZxUKgpmxz4P',
-'04uhhcjGVCHodMgZjXOlye',
-'4EPQtdq6vvwxuYeQTrwDVY',
-'7dAm8ShwJLFm9SaJ6Yc58O',
-'5vRfIDOPJHy3W2wHWbzLlE',
-'6vGEX2ejVVsHTIsqI1teZg',
-'3kVs5uH5hbdeNwp4q0cyEi',
-'7ycBtnsMtyVbbwTfJwRjSP',
-'7dK54iZuOxXFarGhXwEXfF',
-'20U1UWeGcGq7JVW0tf8yfH',
-'7aNclGRxTysfh6z0d8671k',
-'7Et3bSTLLqdABO1qCxUplS',
-'43uErencdmuTRFZPG3zXL1',
-'5RA5hhLlbw31QfQRX11pwo',
-'7bvmGyFDwpHNRRRZJ0AHvn',
-'3ogNAkUhvQy0cFOfLoR6Y8',
-'4onPyHor2yOlVxCsIaGyHH',
-'4xwx0x7k6c5VuThz5qVqmV',
-'4anxEzh8xEKSPXKHGWiFue',
-'602bFcdb1Fof8HImMWxYvp',
-'1lgZgmdWGUt8Ypk5qgaRQH',
-'0ylicfYOxageLwo3uQxiWK',
-'5Ki4YFQrUx7hCcQx1LJUQb',
-'53VKICyqCf91sVkTdFrzKX',
-'4svcCm5yRZtKE0tXn4n1cn',
-'5asaxnymoPyghtKrUwJrwQ',
-'3e7vtKJ3m1zVh38VGq2g3H',
-'386IqvSuljaZsMjwDGGdLj',
-'4Wwm4xg2748zhYuzDRFTgY',
-'71QyofYesSsRMwFOTafnhB',
-'5zi7WsKlIiUXv09tbGLKsE',
-'2nkto6YNI4rUYTLqEwWJ3o',
-'48IFY1wERoy8Lac5FuXHpc',
-'67smHJOf5YlFwad6dAlppm',
-'0XnqQzdSFAml08XZoRt1St',
-'5c2AzoNyr46fCQM5d8mxE0',
-'3Mj4A4nNJzIdxOyS4yzOhj',
-'1jToVugwBEzcak8gJNZG2f',
-'5wtE5aLX5r7jOosmPhJhhk',
-'20r762YmB5HeofjMCiPMLv',
-'66at85wgO2pu5CccvqUF6i',
-'1DNx0H5ZX1ax3yyRwtgT4S',
-'2Ek1q2haOnxVqhvVKqMvJe',
-'6pwuKxMUkNg673KETsXPUV',
-'7gsWAHLeT0w7es6FofOXk1',
-'15zcbfnEwQYqdNosjkrlfu',
-'6wi40lIjhukePWyXRKY7qO',
-'2NDlOOZNBvq6B26feV4gJc',
-'2hOYLjoRQFXcdviMiwtgxe',
-'6idVoBWP2mt1qoMtASm3gc',
-'7MyUIiX7nkyazdl4JqfMJK',
-'5JbeU5WL1WAGxy1u5fsOmf',
-'2PjlaxlMunGOUvcRzlTbtE',
-'7BUlAwJBzKyllRuDTKV8Ae',
-'4Loc7NtCAo9mypHO6kbviD',
-'3v2GjFB9V5kHgrOCXn3sI9',
-'4PWBTB6NYSKQwfo79I3prg',
-'1DqhWr73Fh5yoNzKLas0G3',
-'4CGanXs6KlVuXXdNrf82qE',
-'5FQ4sOGqRWUA5wO20AwPcO',
-'72ojHizmH0fKoZHX15gllP',
-'76290XdXVF9rPzGdNRWdCh',
-'3mH6qwIy9crq0I9YQbOuDf',
-'2Vx9FC6Um8i6kEtY7HNswB',
-'3Yko2SxDk4hc6fncIBQlcM',
-'5VqGGKeWpIBRFh4M4XmqDK',
-'2w1YJXWMIco6EBf0CovvVN',
-'4imRDpzmb4zwvxKhNzJhxr',
-'5XpEKORZ4y6OrCZSKsi46A',
-'19RUXBFyM4PpmrLRdtqWbp',
-'4GNIhgEGXzWGAefgN5qjdU',
-'5m9PLhWhhuKJyTEZpBg7SV',
-'5So31JibrTO74WvuCozsAb',
-'4e0s9NinQo02X4exDDmW65',
-'4UG3kz6qoHtNI1glQ2wdon',
-'1dZZh7PvVgce1DDsDPzy8Z',
-'1QESrfmlfAl19Gr8mXcysi',
-'50156iq4owa0BXegpAf1Mg',
-'4vt0V1SmkaK1Y440P5Nsb4',
-'6JF49ixyHmOgS0Rsda2k42',
-'7Cw4LObzgnVqSlkuIyywtI',
-'1A3nVEWRJ8yvlPzawHI1pQ',
-'504XSXhUJlzztcMV4YMaDV',
-'2HaqChIDc5go3qxVunBDK0',
-'5sY6UIQ32GqwMLAfSNEaXb',
-'4eLPsYPBmXABThSJ821sqY',
-'1pnXY39h7XjEYGmS6PeKUZ'
-
-];
-
-var images = [
-	'ab67616d0000b273a4950162a626593b7340f6c7',
-	'ab67616d0000b273b1178724f4be59abf7acc6c5',
-	'ab67616d0000b2735901aaa980d3e714bf01171c',
-	'ab67616d0000b2731e797f1552a1136091145fd9',
-	'ab67616d0000b273e52a59a28efa4773dd2bfe1b',
-	'7fcc784929677b4b0c480a387567bb8c1586532c',
-	'ab67616d0000b2733fb6bc46c932ca1ab168526a',
-	'd1e45852702e21c779fcb7fc5bc5d17552447c03',
-	'ab67616d0000b273f8aaeba5e6dee1745371e822',
-	'81b8ca9e78f44aca9e34be7f4a9252f5cf7de19f',
-	'ab67616d0000b273085b8dd2bebd2aaac895c78e',
-	'f0ce506327cba6e105aaa42f3a6be98770a2bc5f',
-	'ab67616d0000b273210c8f856757abec0806209c',
-	'ab67616d0000b27390b4e1905b1fc48c537ec053',
-	'acca2e7a1e842f02255f2f55b5a6292328f9fc07',
-	'ab67616d0000b27346f9bf1154c7205b0e8b1667',
-	'ab67616d0000b273f5da2c149c9b9d25ed41a87d',
-	'04d460afec536a267d91d087bfc7f28a9149ff35',
-	'4662ef2e309808ddb0ed7d8819df607350efdc33',
-	'ab67616d0000b27389992f4d7d4ab94937bf9e23',
-	'ab67616d0000b273e4221d183898a2c206626b64',
-	'ab67616d0000b27338906032688bb13b135ce19a',
-	'3c428a08ac4c3c8b85b4efad1f7a42a7a2867879',
-	'ab67616d0000b273d844f6b7311a69b9a08e7a0f',
-	'0ddf1d320dd3a96ca3a45666fbbb9e0a63735296',
-	'ab67616d0000b27347dd2ca47ec9bf14559e17c6',
-	'ab67616d0000b273b5979c45e4f23e95aefd6933',
-	'ab67616d0000b2737c489be841df6272caed47e9',
-	'6c47e597e0a8dd9b5a18abf16a203ba0003c8681',
-	'ab67616d0000b2735d6fb1541aad6c364a7fc369',
-	'176d5a7f186d09da5d03bc3f0208281833ba36f0',
-	'ab67616d0000b27311e0d6a100c4f93e293b1146',
-	'ab67616d0000b273c615312f90efceff73110ae2',
-	'ab67616d0000b2738fdd144d8a8e57db60c5c29d',
-	'ab67616d0000b2735676fba9c44ba772deb81727',
-	'ab67616d0000b2730bd2dd0041256bcca30a1d9a',
-	'473e49985ee7cea69a1c6e0d24d9787da4bf5c3a',
-	'ab67616d0000b2733e25c9ef701bb637773531fe',
-	'ab67616d0000b273cee4acc7bfe23bc75461a66c',
-	'ab67616d0000b2731c54fc953531d5da04232deb',
-	'ab67616d0000b273e71dd15fc5bdefd5bff70452',
-	'ab67616d0000b2737005885df706891a3c182a57',
-	'ab67616d0000b2738940ac99f49e44f59e6f7fb3',
-	'ab67616d0000b27346fc3effbd1b9af4c69019ac',
-	'ab67616d0000b273a0c4a585a7d73b4943b9bf13',
-	'ab67616d0000b2737d15fb20303a589acc1ab98b',
-	'ab67616d0000b273ef51817e6a6563b6f7ce5872',
-	'ab67616d0000b273de91214392394303e66d1cb6',
-	'ab67616d0000b27346f07fa4f28bf824840ddacb',
-	'ab67616d0000b273175c577a61aa13d4fb4b6534',
-	'd0747e2b961844569ec2f5a3d1e65083f30cf809',
-	'ab67616d0000b2732b688ab63b1a5f281cfdf451',
-	'ab67616d0000b2734a42166d927b3acce345c5c0',
-	'fa3ac7ac6d0d40f3fca5cf3845c03c717396ec24',
-	'ab67616d0000b273013c00ee367dd85396f79c82',
-	'5a8efefdba4562114d38e0deddd49635550f428c',
-	'ab67616d0000b2730d6056df5005ac0f1edf8e44',
-	'ab67616d0000b273595101c281d7e229e1f0e6c4',
-	'ab67616d0000b2735d084c9ce80631cbce8d84c2',
-	'ab67616d0000b2730d86ec6aa49e27bcc92b87f1',
-	'ab67616d0000b2737d05dd3ebb77cc048d66b294',
-	'ab67616d0000b273db4a7040705e9f54a93b139a',
-	'ab67616d0000b273ea2f8f07a050f8dc9ff93de0',
-	'ab67616d0000b2730a60fb0deda858270cca82ee',
-	'3f2580a1b82961dde5084bc41d9df6e971f8b44a',
-	'ab67616d0000b273e3a92b59ca220e9d14ccab60',
-	'ab67616d0000b2737106be2b3a106bbdd3949158',
-	'ab67616d0000b2737433176f037e0ba14190c34f',
-	'fd5d75466a6b0515919baf00e534c901a76d28a0',
-	'ab67616d0000b273acd9825c2d60ddee38f643b3',
-	'14ebdc93e4de87e03781b6409a7f5eeec1314606',
-	'ab67616d0000b2733fefe2f0500c4dfe5b491993',
-	'ab67616d0000b2734c79d5ec52a6d0302f3add25',
-	'ab67616d0000b273c5649add07ed3720be9d5526',
-	'9d3b0765cba6642ea88970336e7ae49753bb24e8',
-	'ab67616d0000b2731c4540d0ecafaa45305aa5a0',
-	'ab67616d0000b27378cbb644992050cfee639f39',
-	'ab67616d0000b2734ff4ced89fcfe48079c11b37',
-	'ab67616d0000b27392cd8ca03552bdf6dd5e8934',
-	'ab67616d0000b273db58320165892f952a6ddb3f',
-	'ab67616d0000b273c174bffb607ee576329291a6',
-	'ab67616d0000b273fce23dadb51975ebf2e9d75c',
-	'ab67616d0000b2733dc26c67fc080a8a4c6c416e',
-	'ab67616d0000b2738ff0b15a20a57ffe79e4b49c',
-	'ab67616d0000b273410dd4054ccd5a57aba612d1',
-	'ab67616d0000b273f56213eede5f2e6a6065fb6d',
-	'ab67616d0000b27342c18fe458181bc13d08070a',
-	'88831b44e5315242100fa1b7902b62807421b164',
-	'fad1e4e15dcb7c5407d610830ead6ff86937bcd7',
-	'ab67616d0000b273863a30c04dd17e33a627fd31',
-	'ab67616d0000b273986cd6b330f7405b17a604f4',
-	'ab67616d0000b273683757f1fd40a7f7ef64bec1',
-	'ab67616d0000b273a2b1d3e73c66663c01351bcf',
-	'ab67616d0000b27347b803d47dbbe406bd738de5',
-	'ab67616d0000b2734d3fa5ce7ba599f4fd7803ef',
-	'bb2ef71c9576794699222ef73a00a0a1a8ddd3db',
-	'4490d819e1436c1ea450ef9e125726c1959ff4ee',
-	'ab67616d0000b273e3cfb367ec496e725ad947f1'
-
-];
-
- 
-var num = Math.floor( Math.random() * images.length );
-
-//num = images.length-1; // debug
-
-
- var img = images[ num ];
-	var lnk = url [ num ];
- 
-
-
-function getRandomTitle() {
-
-	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='https://open.spotify.com/album/"+lnk+"'><img style='width:300px; height:300px;' src='https://i.scdn.co/image/"+img+"'></a>");
- document.close();
-}
-
-var imnum = 0;
-var imnumb = 1;
-var imnumc = 2;
-function getAllTitle(){
-while (imnum < images.length-1) {
-var imgn = images[ imnum ];
-var lnkn = url [ imnum ];
-var imgnb = images[ imnumb ];
-var lnknb = url [ imnumb];
-var imgnc = images[ imnumc];
-var lnknc = url [ imnumc ] ;
-
-if (imgn != null && imgnb != null && imgnc != null){
-
-  document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
-
-}
-
-else if (imgn != null && imgnc == null && imgnb != null){
-
-  document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'></div></div>");
-
-}
-
-else if (imgnb == null){
-
- document.write("<style>.grid-container {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-container'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
-}
-
-  imnum=imnum+3;
-  imnumb= imnumb+3;
-  imnumc= imnumc + 3;
-
-}
-}
-
-</script>
-
-  <a href="index.html" class="fa fa-clone grow"></a>
-  <i id="button" class="fa fa-archive grow"></i>
-
-
-<div class="album" id="randdemo" style='visibility: visible;'>
-<script>getRandomTitle();</script>
-</div>
-<div id="alldemo" style="display: none; position: fixed;
-  left: 50%;
-  top:50%;
-  /* bring your own prefixes */
-  transform: translate(-50%, -50%); overflow-y: scroll; height: 300px !important;"><script class="potato">getAllTitle();</script></div>
-
-
-<script>
-$("#button").click(function(){
-  $("#alldemo").toggle();
-  $("#randdemo").toggle();
-});
-</script>
-
-<script>
-
-window.addEventListener("keydown", checkKeyPressed, false);
-
-function checkKeyPressed(evt) {
-    if (evt.keyCode == "13") {
-           window.location.reload();
-    }
-}
-</script>
-
-  </body>
-	    </html>
+         }
+         
+         else if (imnumd > images.length && imgn != null && imgnb != null && imgnc == null){ //the last row if it has 2 images
+         
+           document.write("<style>.grid-containerc {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerc'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'></div></div>");
+         
+         }
+         
+         else if (imnumd > images.length && imgn != null && imgnb == null && imgnc == null){ //the last row if it has 1 images
+         
+          document.write("<style>.grid-containerd {display: grid; width:20%; grid-template-columns: auto auto auto;  margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerd'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
+         }
+         
+         
+         
+         
+         
+           imnum=imnum+3;
+           imnumb= imnumb+3;
+           imnumc= imnumc + 3;
+           imnumd= imnumd + 3;
+         
+         }
+         }
+         
+      </script>
+      <a href="index.html" class="fa fa-clone"></a>
+      <i id="button" class="fa fa-archive"></i>
+      <div class="album" id="randdemo" style='visibility: visible;'>
+         <script>getRandomTitle();</script>
+      </div>
+      <div id="alldemo" style="display: none; position: fixed;
+         left: 50%;
+         top:50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%); overflow-y: scroll; height: 300px !important;">
+         <script class="potato">getAllTitle();</script>
+      </div>
+      <script>
+         $('#button').on('click', function () {
+            $('.fa-archive').toggleClass('.fa-archive-onclick')
+         })
+      </script>
+      <script>
+         $("#button").click(function(){
+           $("#alldemo").toggle();
+           $("#randdemo").toggle();
+         });
+      </script>
+      <script>
+         window.addEventListener("keydown", checkKeyPressed, false);
+         
+         function checkKeyPressed(evt) {
+             if (evt.keyCode == "13") {
+                    window.location.reload();
+             }
+         }
+      </script>
+   </body>
+</html>
