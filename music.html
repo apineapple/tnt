@@ -179,7 +179,16 @@
          '5sY6UIQ32GqwMLAfSNEaXb',
          '4eLPsYPBmXABThSJ821sqY',
          '1pnXY39h7XjEYGmS6PeKUZ',
-         '6Ulu31dfRTpIAud08ZIhXd'
+         '6Ulu31dfRTpIAud08ZIhXd',
+         '5ra51AaWF3iVebyhlZ1aqq',
+         '5LsyqeWryTmxsmda4xkm5a',
+         '08eWihUSFSOoMI9uFRj2EP',
+         '4Carzsnpd6yvuHZ49I0oz8',
+         '4kkVGtCqE2NiAKosri9Rnd',
+         '00lH27Je9yW7Y4dxZmmO6C',
+         '2jLwYNAND8VQYD3YFhtujW',
+         '07bIdDDe3I3hhWpxU6tuBp'
+
          
          ];
          
@@ -283,7 +292,15 @@
          	'4490d819e1436c1ea450ef9e125726c1959ff4ee',
          	'ab67616d0000b273e3cfb367ec496e725ad947f1',
          	'ab67616d0000b273ed66c55b0d199553e3f2ac55',
-         	'ab67616d0000b273f5836791fd265b08343034cd'
+         	'ab67616d0000b273f5836791fd265b08343034cd',
+            'ab67616d0000b273fcd3724fba954e6104e4530d',
+            '948ad42af6e9c021d3f9eebfaf699013d4fc5e12',
+            '13da55639bbd1f45bb784842bc425d69ec73bfa3',
+            'ab67616d0000b273b08b996d08001270adc8b555',
+            '38450de1e0291c796b898ec47c4813a865b2ff87',
+            'ab67616d0000b273bfb9a9f87f2fda465d4b032c',
+            'ab67616d0000b2735ab2e9ee13191c3fcd1d58d3',
+            'ab67616d0000b273263555eebbe2b375593aa31e'
          
          ];
          
@@ -318,15 +335,15 @@
          var imgnc = images[ imnumc];
          var lnknc = url [ imnumc ] ;
 
-         if (imnumd <= images.length && imgn != null && imgnb != null && imgnc != null) { //all rows except the last one
+         if (imnumd < images.length && imgn != null && imgnb != null && imgnc != null) { //all rows except the last one
          
            document.write("<style>.grid-containera {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
          
          }
          
-         else if (imnumd > images.length && imgn != null && imgnb != null && imgnc != null){ //the last row if it has 3 images
+         else if (imnumd >= images.length && imgn != null && imgnb != null && imgnc != null){ //the last row if it has 3 images
          
-         	document.write("<style>.grid-containerb {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
+         	document.write("<style>.grid-containerb {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;}</style><div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
 
          }
          
@@ -366,11 +383,6 @@
          transform: translate(-50%, -50%); overflow-y: scroll; height: 300px !important;">
          <script class="potato">getAllTitle();</script>
       </div>
-      <script>
-         $('#button').on('click', function () {
-            $('.fa-archive').toggleClass('.fa-archive-onclick')
-         })
-      </script>
       <script>
          $("#button").click(function(){
            $("#alldemo").toggle();
