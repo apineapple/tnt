@@ -79,16 +79,11 @@ var start = new Date(now.getFullYear(), 0, 0);
 var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
 var oneDay = 1000 * 60 * 60 * 24;
 var day = Math.floor(diff / oneDay);
-var vDay = day - 1;
 var today = new Date();
 var yyyy = today.getFullYear();
 
-if (yyyy>2021){
-vDay = vDay*(yyyy-2021+1);
-   }
-else{
-   vDay = vDay;
-}    
+var vDay = day - 1 +(yyyy-2003)*366;
+
          var url= [
          '2yiX02xQ3Qo2fDXbfEQeS3',
          '3kEtdS2pH6hKcMU9Wioob1',
@@ -330,7 +325,6 @@ num = vDay - cycle*url.length;
          
          
          function getRandomTitle() {
-         
          	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='https://open.spotify.com/album/"+lnk+"'><img style='width:300px; height:300px;' src='https://i.scdn.co/image/"+img+"'></a>");
           document.close();
          }
