@@ -16,7 +16,6 @@
       <link rel="shortcut icon" style="border-radius: 50% !important;" type="image/x-icon" href="icon.ico" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-          <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <style>
          .fa-clone {
          padding: 20px;
@@ -196,7 +195,7 @@ var vDay = day - 1 +(yyyy-2003)*366;
          '07bIdDDe3I3hhWpxU6tuBp'
          ];
          
-  /*      
+        
 
     var images = [
          	'ab67616d0000b273a4950162a626593b7340f6c7',
@@ -308,19 +307,7 @@ var vDay = day - 1 +(yyyy-2003)*366;
             'ab67616d0000b2735ab2e9ee13191c3fcd1d58d3',
             'ab67616d0000b273263555eebbe2b375593aa31e'
          
-         ];*/
-
-         var images = [];
-for (i=0; i<url.length; i++){
-
-    $.getJSON('https://api.spotify.com/v1/albums/'+url[i], function(data) {
-        
-        var text = `Label: ${data.images[0].url}`
-           url.push(text);         
-        //$(".mypanel").html(text);
-
-    });
-}
+         ];
 
       var cy = vDay/url.length;
       var cycle = Math.floor(cy);
