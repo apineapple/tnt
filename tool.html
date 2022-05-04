@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
+      <title>
+         tnt
+      </title>
+      <link rel="shortcut icon" style="border-radius: 50% !important;" type="image/x-icon" href="icon.ico" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="webapi.js"></script>
+      <style>
+         .fa-clone {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0;
+         left: 0;
+         }
+         .fa-archive {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0;
+         left: 0px;
+         }
+         .fa-refresh {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 70px;
+         left: 4px;
+         }
+         .fa-caret-square-o-up{
+          padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 140px;
+         left: 4px;
+         }
+         .fa-caret-square-o-down{
+            padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 210px;
+         left: 4px;
+         }
+        .fa-cog {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         bottom: 20px;
+         left: 4px;
+         }
+         img{
+         width: 100px;
+         height: 100px;
+         border-radius: 5px;
+         }
+         a{
+         text-decoration: none;
+         }
+         a:hover{
+         text-decoration: none;
+         color: black;
+         }
+         .album{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
+         .all{
+    width: 300px;
+         }
+         /* Modal Content */
+         /* Add Animation */
+      </style>
+   </head>
+   <body>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script>
+         // place your images in this array
+var now = new Date();
+var start = new Date(now.getFullYear(), 0, 0);
+var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+var oneDay = 1000 * 60 * 60 * 24;
+var day = Math.floor(diff / oneDay);
+var rando = 0;
+var rimg ="";
+var rlnk = "";
+
+         var array = [
+         ["saturation ii", "brockhampton"],
+         ["truck music", "body meat"],
+         ["Capacity", "big thief"],
+         ["damn", "kendrick lamar"],
+         ["Special Herbs", "MF DOOM"],
+         ["Ada Irin", "Navy Blue"]
+         ];
+
+      var cy = day/array.length;
+      var cycle = Math.floor(cy);
+      var num = array.length-1;
+      if (day <= array.length){
+         num = day-1;
+      }  
+         //num = images.length-1; // debug
+         //num = Math.floor( Math.random() * images.length );
+         
+        //  var img = images[ num ];
+        //  var lnk = url [ num ];
+          
+          var img ="";
+      var lnk="";
+          var rimg ="";
+      var rlnk="";
+      var output = "";
+      var randomoutput = "";
+      var search = "";
+      var name = "";
+      var rname = "";
+
+      var access = "BQCWsyhsGZQQQj7SlOI3jOdRQ4bJSw0tgRoIGANBAUHn8MDJLW9Z8iYJcVxZSlSiv8_8eW74rpCCBWd1sgpr6-0bCr6mBMIkauEcGBcQgAASLtj1GvT7NPSuP4lBXW5UDSl1JCOl4A";
+      var spotifyApi = new SpotifyWebApi();
+    spotifyApi.setAccessToken(access);
+    search = array[num][0];
+
+
+
+ output = spotifyApi.searchAlbums(search, null, function(err, data){
+   if (err) console.error(err);
+  else 
+   img = data.albums.items[0].images[0].url;
+   name = data.albums.items[0].name;
+   lnk = "https://open.spotify.com/album/"+data.albums.items[0].id;
+
+          document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:300px; height:300px;' src='"+img+"'></a>");
+   console.log(name);
+});
+
+       var itemsearch = "";
+      var alloutput = "";
+      var aimg = "";
+      var alnk = "";
+      var aname = "";
+      var allcontent = "";
+      var thiscontent = "";
+      var itn = 0;
+
+var allApi = new SpotifyWebApi();
+allApi.setAccessToken(access);
+
+for(var j = 0; j < array.length; j++){
+itemsearch =  array[j][0];
+
+alloutput = allApi.searchAlbums(itemsearch, null, function(err, data){
+   if (err) console.error(err);
+  else 
+   aimg = data.albums.items[0].images[0].url;
+   aname = data.albums.items[0].name;
+   alnk = "https://open.spotify.com/album/"+data.albums.items[0].id;
+
+thiscontent= aname;
+console.log(thiscontent);
+
+allcontent = allcontent+"[['"+alnk+"'],"+"['"+aimg+"']],";
+itn++;
+document.getElementById("alldemo").innerHTML = allcontent;
+
+  }); 
+   console.log(thiscontent+j);
+}
+
+
+
+ var randomApi = new SpotifyWebApi();
+randomApi.setAccessToken(access);
+
+function change(){
+rando = Math.floor( Math.random() * array.length );
+rearch = array[rando][0]; //+" "+array[rando][1];
+
+randomoutput = randomApi.searchAlbums(rearch, null, function(err, data){
+   if (err) console.error(err);
+  else 
+   rimg = data.albums.items[0].images[0].url;
+   rname = data.albums.items[0].name;
+   rlnk = "https://open.spotify.com/album/"+data.albums.items[0].id;
+
+          document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+rlnk+");} .im{visibility:hidden;}</style><a href='"+rlnk+"'><img style='width:300px; height:300px;' src='"+rimg+"'></a>");
+   console.log(rname);
+  }); 
+
+}
+         
+      </script>
+      <i id="button" class="fa fa-archive"></i>
+      <i id="random" onclick="change()" class="fa fa-refresh"></i>
+      <i id="up" onclick="up()" class="fa fa-caret-square-o-up"></i>
+      <i id="down" onclick="down()" class="fa fa-caret-square-o-down"></i>
+      <i id="button" class="fa fa-cog"></i>
+      
+      <div class="album" id="randdemo" style='visibility: visible;'>
+      </div>
+      <div id="alldemo" style="position: fixed;
+         left: 50%;
+         top:50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%); overflow-y: scroll; height: 300px !important;'">
+      </div>
+      <script>
+         $("#button").click(function(){
+           $("#alldemo").toggle();
+           $("#randdemo").toggle();
+         });
+      </script>
+      <script>
+         window.addEventListener("keydown", checkKeyPressed, false);
+         
+         function checkKeyPressed(evt) {
+             if (evt.keyCode == "13") {
+                    window.location.reload();
+             }
+         }
+      </script>
+   </body>
+</html>
