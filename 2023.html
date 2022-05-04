@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="icon.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icon.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icon.jpg" />
+      <title>
+         tnt
+      </title>
+      <link rel="shortcut icon" style="border-radius: 50% !important;" type="image/x-icon" href="icon.ico" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <style>
+         .fa-clone {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0;
+         left: 0;
+         }
+         .fa-archive {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 0;
+         left: 0px;
+         }
+         img{
+         width: 93.3333333px;
+         height: 93.333333px;
+         border-radius: 5px;
+         }
+         a{
+         text-decoration: none;
+         }
+         a:hover{
+         text-decoration: none;
+         color: black;
+         }
+         .album{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
+        body{
+           background-image: url("icon.jpg");
+         }
+         /* Modal Content */
+         /* Add Animation */
+      </style>
+   </head>
+   <body>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script>
+         // place your images in this array
+var now = new Date();
+var start = new Date(now.getFullYear(), 0, 0);
+var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+var oneDay = 1000 * 60 * 60 * 24;
+var day = Math.floor(diff / oneDay);
+var today = new Date();
+var yyyy = today.getFullYear();
+
+var vDay = day - 1 +(yyyy-2003)*366;
+
+         var array= [
+[https://open.spotify.com/album/0XnqQzdSFAml08XZoRt1St],[https://i.scdn.co/image/ab67616d0000b2737d15fb20303a589acc1ab98b]],[https://open.spotify.com/album/4eLPsYPBmXABThSJ821sqY],[https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699]],[https://open.spotify.com/album/5m9PLhWhhuKJyTEZpBg7SV],[https://i.scdn.co/image/ab67616d0000b2733dc26c67fc080a8a4c6c416e]],[https://open.spotify.com/album/3jXbdginoAtjcBqT7GcYRd],[https://i.scdn.co/image/ab67616d0000b273d1283f35f48f302101d40f43]],[https://open.spotify.com/album/0iCeii4kXm8YOIHxxzQphO],[https://i.scdn.co/image/ab67616d0000b273a3c9c6ee3a0ee2db670b33e4]],[https://open.spotify.com/album/63fFCsXmRWP5Spr06X83Tb],[https://i.scdn.co/image/ab67616d0000b2733793a5691f123282e9a72457]],
+
+         ];
+         
+        
+        var cy = day/array.length;
+      var cycle = Math.floor(cy);
+      var num = array.length-1;
+      if (day <= array.length){
+         num = day-1;
+      }  
+         //num = images.length-1; // debug
+         //num = Math.floor( Math.random() * images.length );
+         
+          var img = array[ num ][1];
+         	var lnk = array [ num ][0];
+          
+         
+         
+         function getRandomTitle() {
+         	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='https://open.spotify.com/album/"+lnk+"'><img style='width:300px; height:300px;' src='https://i.scdn.co/image/"+img+"'></a>");
+          document.close();
+         }
+         
+         var imnum = 0;
+         var imnumb = 1;
+         var imnumc = 2;
+         var imnumd = 3;
+         
+         function getAllTitle(){
+         while (imnum < images.length) {
+         var imgn = array[ imnum ][1];
+         var lnkn = array[ imnum ][0];
+         var imgnb = array[ imnumb ][1];
+         var lnknb = array[ imnumb][0];
+         var imgnc = array[ imnumc][1];
+         var lnknc = array[ imnumc ][0] ;
+
+         if (imnumd < images.length && imgn != null && imgnb != null && imgnc != null) { //all rows except the last one
+         
+           document.write("<style>.grid-containera {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
+         
+         }
+         
+         else if (imnumd >= images.length && imgn != null && imgnb != null && imgnc != null){ //the last row if it has 3 images
+         
+         	document.write("<style>.grid-containerb {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;}</style><div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
+
+         }
+         
+         else if (imnumd > images.length && imgn != null && imgnb != null && imgnc == null){ //the last row if it has 2 images
+         
+           document.write("<style>.grid-containerc {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerc'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'></div></div>");
+         
+         }
+         
+         else if (imnumd > images.length && imgn != null && imgnb == null && imgnc == null){ //the last row if it has 1 images
+         
+          document.write("<style>.grid-containerd {display: grid; width:20%; grid-template-columns: auto auto auto;  margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerd'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
+         }
+         
+         
+         
+         
+         
+           imnum=imnum+3;
+           imnumb= imnumb+3;
+           imnumc= imnumc + 3;
+           imnumd= imnumd + 3;
+         
+         }
+         }
+         
+      </script>
+      <i id="button" class="fa fa-archive"></i>
+      <div class="album" id="randdemo" style='visibility: visible;'>
+        <script>getRandomTitle();</script>
+      </div>
+      <div id="alldemo" style="display: none; position: fixed;
+         left: 50%;
+         top:50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%); overflow-y: scroll; height: 300px !important;">
+         <script class="potato">getAllTitle();</script>
+      </div>
+      <script>
+         $("#button").click(function(){
+           $("#alldemo").toggle();
+           $("#randdemo").toggle();
+         });
+      </script>
+      <script>
+         window.addEventListener("keydown", checkKeyPressed, false);
+         
+         function checkKeyPressed(evt) {
+             if (evt.keyCode == "13") {
+                    window.location.reload();
+             }
+         }
+      </script>
+   </body>
+</html>
