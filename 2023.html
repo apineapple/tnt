@@ -67,7 +67,7 @@
          position: fixed;
          z-index: 999;
          top: 0px;
-         right: 4px;
+         left: 80px;
          }
          .fa-caret-square-o-down{
             padding: 20px;
@@ -80,20 +80,7 @@
          position: fixed;
          z-index: 999;
          top: 70px;
-         right: 4px;
-         }
-        .fa-cog {
-         padding: 20px;
-         font-size: 50px;
-         width: 70px;
-         height: 70px;
-         text-align: center;
-         text-decoration: none;
-         color: black;
-         position: fixed;
-         z-index: 999;
-         bottom: 20px;
-         left: 4px;
+         left: 80px;
          }
          img{
          width: 93.3333333px;
@@ -240,13 +227,10 @@ document.getElementById("randdemo").innerHTML = ("<style>body{background-image: 
          }
          
       </script>
-      <div style="display: none;" id="icons">
       <i id="button" class="fa fa-archive"></i>
       <i id="random" onclick="random()" class="fa fa-refresh"></i>
       <i id="up" onclick="up()" class="fa fa-caret-square-o-up"></i>
       <i id="down" onclick="down()" class="fa fa-caret-square-o-down"></i>
-   </div>
-      <i id="cog" class="fa fa-cog"></i>
 
       <div class="album" id="randdemo" style='visibility: visible;'>
         <script>getRandomTitle();</script>
@@ -262,9 +246,6 @@ document.getElementById("randdemo").innerHTML = ("<style>body{background-image: 
          $("#button").click(function(){
            $("#alldemo").toggle();
            $("#randdemo").toggle();
-         });
-          $("#cog").click(function(){
-           $("#icons").toggle();
          });
       </script>
       <script>
