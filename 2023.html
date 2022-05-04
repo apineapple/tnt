@@ -43,6 +43,58 @@
          top: 0;
          left: 0px;
          }
+          .fa-refresh {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 70px;
+         left: 4px;
+         }
+         .fa-caret-square-o-up{
+          padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 140px;
+         left: 4px;
+         }
+         .fa-caret-square-o-down{
+            padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         top: 210px;
+         left: 4px;
+         }
+        .fa-cog {
+         padding: 20px;
+         font-size: 50px;
+         width: 70px;
+         height: 70px;
+         text-align: center;
+         text-decoration: none;
+         color: black;
+         position: fixed;
+         z-index: 999;
+         bottom: 20px;
+         left: 4px;
+         }
          img{
          width: 93.3333333px;
          height: 93.333333px;
@@ -62,9 +114,7 @@
          /* bring your own prefixes */
          transform: translate(-50%, -50%);
          }
-        body{
-           background-image: url("icon.jpg");
-         }
+
          /* Modal Content */
          /* Add Animation */
       </style>
@@ -88,8 +138,7 @@ var yyyy = today.getFullYear();
 var vDay = day - 1 +(yyyy-2003)*366;
 
          var array= [
-[https://open.spotify.com/album/0XnqQzdSFAml08XZoRt1St],[https://i.scdn.co/image/ab67616d0000b2737d15fb20303a589acc1ab98b]],[https://open.spotify.com/album/4eLPsYPBmXABThSJ821sqY],[https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699]],[https://open.spotify.com/album/5m9PLhWhhuKJyTEZpBg7SV],[https://i.scdn.co/image/ab67616d0000b2733dc26c67fc080a8a4c6c416e]],[https://open.spotify.com/album/3jXbdginoAtjcBqT7GcYRd],[https://i.scdn.co/image/ab67616d0000b273d1283f35f48f302101d40f43]],[https://open.spotify.com/album/0iCeii4kXm8YOIHxxzQphO],[https://i.scdn.co/image/ab67616d0000b273a3c9c6ee3a0ee2db670b33e4]],[https://open.spotify.com/album/63fFCsXmRWP5Spr06X83Tb],[https://i.scdn.co/image/ab67616d0000b2733793a5691f123282e9a72457]],
-
+[['https://open.spotify.com/album/0XnqQzdSFAml08XZoRt1St'],['https://i.scdn.co/image/ab67616d0000b2737d15fb20303a589acc1ab98b']],[['https://open.spotify.com/album/63fFCsXmRWP5Spr06X83Tb'],['https://i.scdn.co/image/ab67616d0000b2733793a5691f123282e9a72457']],[['https://open.spotify.com/album/0iCeii4kXm8YOIHxxzQphO'],['https://i.scdn.co/image/ab67616d0000b273a3c9c6ee3a0ee2db670b33e4']],[['https://open.spotify.com/album/4eLPsYPBmXABThSJ821sqY'],['https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699']],[['https://open.spotify.com/album/3jXbdginoAtjcBqT7GcYRd'],['https://i.scdn.co/image/ab67616d0000b273d1283f35f48f302101d40f43']],[['https://open.spotify.com/album/5m9PLhWhhuKJyTEZpBg7SV'],['https://i.scdn.co/image/ab67616d0000b2733dc26c67fc080a8a4c6c416e']],
          ];
          
         
@@ -99,8 +148,8 @@ var vDay = day - 1 +(yyyy-2003)*366;
       if (day <= array.length){
          num = day-1;
       }  
-         //num = images.length-1; // debug
-         //num = Math.floor( Math.random() * images.length );
+         //num = array.length-1; // debug
+         //num = Math.floor( Math.random() * array.length );
          
           var img = array[ num ][1];
          	var lnk = array [ num ][0];
@@ -108,7 +157,36 @@ var vDay = day - 1 +(yyyy-2003)*366;
          
          
          function getRandomTitle() {
-         	document.write("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='https://open.spotify.com/album/"+lnk+"'><img style='width:300px; height:300px;' src='https://i.scdn.co/image/"+img+"'></a>");
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:300px; height:300px;' src='"+img+"'></a>");
+          document.close();
+         }
+
+         var rnum = 0;
+         
+         function random() {
+             rnum = Math.floor( Math.random() * array.length );
+               var rimg = array[ rnum ][1];
+            var rlnk = array [ rnum ][0];
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+rlnk+");} .im{visibility:hidden;}</style><a href='"+rlnk+"'><img style='width:300px; height:300px;' src='"+rimg+"'></a>");
+          document.close();
+         }
+          var bonusnum = num;
+         
+         function up() {
+             bonusnum = bonusnum -1;
+             if (bonusnum < 0){bonusnum = array.length-1;}
+               var uimg = array[ bonusnum ][1];
+            var ulnk = array [ bonusnum ][0];
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+ulnk+");} .im{visibility:hidden;}</style><a href='"+ulnk+"'><img style='width:300px; height:300px;' src='"+uimg+"'></a>");
+          document.close();
+         }
+
+                  function down() {
+             bonusnum = bonusnum + 1;
+             if (bonusnum > array.length-1){bonusnum = 0;}
+               var dimg = array[ bonusnum ][1];
+            var dlnk = array [ bonusnum ][0];
+document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+dlnk+");} .im{visibility:hidden;}</style><a href='"+dlnk+"'><img style='width:300px; height:300px;' src='"+dimg+"'></a>");
           document.close();
          }
          
@@ -118,7 +196,7 @@ var vDay = day - 1 +(yyyy-2003)*366;
          var imnumd = 3;
          
          function getAllTitle(){
-         while (imnum < images.length) {
+         while (imnum < array.length) {
          var imgn = array[ imnum ][1];
          var lnkn = array[ imnum ][0];
          var imgnb = array[ imnumb ][1];
@@ -126,27 +204,27 @@ var vDay = day - 1 +(yyyy-2003)*366;
          var imgnc = array[ imnumc][1];
          var lnknc = array[ imnumc ][0] ;
 
-         if (imnumd < images.length && imgn != null && imgnb != null && imgnc != null) { //all rows except the last one
+         if (imnumd < array.length && imgn != null && imgnb != null && imgnc != null) { //all rows except the last one
          
-           document.write("<style>.grid-containera {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
+           document.write("<style>.grid-containera {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='"+imgnc+"'></a></div></div>");
          
          }
          
-         else if (imnumd >= images.length && imgn != null && imgnb != null && imgnc != null){ //the last row if it has 3 images
+         else if (imnumd >= array.length && imgn != null && imgnb != null && imgnc != null){ //the last row if it has 3 images
          
-         	document.write("<style>.grid-containerb {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;}</style><div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='https://i.scdn.co/image/"+imgnc+"'></a></div></div>");
+         	document.write("<style>.grid-containerb {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;}</style><div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='https://open.spotify.com/album/"+lnknc+"'><img src='"+imgnc+"'></a></div></div>");
 
          }
          
-         else if (imnumd > images.length && imgn != null && imgnb != null && imgnc == null){ //the last row if it has 2 images
+         else if (imnumd > array.length && imgn != null && imgnb != null && imgnc == null){ //the last row if it has 2 images
          
-           document.write("<style>.grid-containerc {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerc'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='https://i.scdn.co/image/"+imgnb+"'></a></div><div class='grid-item'></div></div>");
+           document.write("<style>.grid-containerc {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerc'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'></div></div>");
          
          }
          
-         else if (imnumd > images.length && imgn != null && imgnb == null && imgnc == null){ //the last row if it has 1 images
+         else if (imnumd > array.length && imgn != null && imgnb == null && imgnc == null){ //the last row if it has 1 images
          
-          document.write("<style>.grid-containerd {display: grid; width:20%; grid-template-columns: auto auto auto;  margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerd'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='https://i.scdn.co/image/"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
+          document.write("<style>.grid-containerd {display: grid; width:20%; grid-template-columns: auto auto auto;  margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerd'><div class='grid-item' style='margin-right:10px;'><a href='https://open.spotify.com/album/"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
          }
          
          
@@ -162,7 +240,14 @@ var vDay = day - 1 +(yyyy-2003)*366;
          }
          
       </script>
+      <div style="display: none;" id="icons">
       <i id="button" class="fa fa-archive"></i>
+      <i id="random" onclick="random()" class="fa fa-refresh"></i>
+      <i id="up" onclick="up()" class="fa fa-caret-square-o-up"></i>
+      <i id="down" onclick="down()" class="fa fa-caret-square-o-down"></i>
+   </div>
+      <i id="cog" class="fa fa-cog"></i>
+
       <div class="album" id="randdemo" style='visibility: visible;'>
         <script>getRandomTitle();</script>
       </div>
@@ -177,6 +262,9 @@ var vDay = day - 1 +(yyyy-2003)*366;
          $("#button").click(function(){
            $("#alldemo").toggle();
            $("#randdemo").toggle();
+         });
+          $("#cog").click(function(){
+           $("#icons").toggle();
          });
       </script>
       <script>
