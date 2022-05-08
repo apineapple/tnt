@@ -129,11 +129,14 @@ var vDay = day - 1 +(yyyy-2003)*366;
          ];
          
         
-        var cy = day/array.length;
+  var cy = vDay/url.length;
       var cycle = Math.floor(cy);
-      var num = array.length-1;
-      if (day <= array.length){
-         num = day-1;
+      var num = 0
+      if (vDay > cycle*url.length){
+num = vDay - cycle*url.length;
+      }
+      else {
+         vDay = num;
       }  
          //num = array.length-1; // debug
          //num = Math.floor( Math.random() * array.length );
