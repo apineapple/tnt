@@ -129,11 +129,11 @@ var vDay = day - 1 +(yyyy-2003)*366;
          ];
          
         
-  var cy = vDay/url.length;
+          var cy = vDay/array.length;
       var cycle = Math.floor(cy);
-      var num = 0
-      if (vDay > cycle*url.length){
-num = vDay - cycle*url.length;
+      var num = 0;
+      if (vDay > cycle*array.length){
+num = vDay - cycle*array.length;
       }
       else {
          vDay = num;
@@ -185,6 +185,7 @@ document.getElementById("randdemo").innerHTML = ("<style>body{background-image: 
          var imnumb = 1;
          var imnumc = 2;
          var imnumd = 3;
+         var fullcontent = "thisstringisdumblikemywebsite";
          
          function getAllTitle(){
          while (imnum < array.length) {
@@ -197,25 +198,25 @@ document.getElementById("randdemo").innerHTML = ("<style>body{background-image: 
 
          if (imnumd < array.length && imgn != null && imgnb != null && imgnc != null) { //all rows except the last one
          
-           document.write("<style>.grid-containera {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='"+lnknc+"'><img src='"+imgnc+"'></a></div></div>");
+           fullcontent = fullcontent+"<style>.grid-containera {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 10px;}.grid-item {text-align: center;} </style> <div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='"+lnknc+"'><img src='"+imgnc+"'></a></div></div>";
          
          }
          
          else if (imnumd >= array.length && imgn != null && imgnb != null && imgnc != null){ //the last row if it has 3 images
          
-         	document.write("<style>.grid-containerb {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;}</style><div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='"+lnknc+"'><img src='"+imgnc+"'></a></div></div>");
+         	fullcontent = fullcontent+"<style>.grid-containerb {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;}</style><div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'><a href='"+lnknc+"'><img src='"+imgnc+"'></a></div></div>";
 
          }
          
          else if (imnumd > array.length && imgn != null && imgnb != null && imgnc == null){ //the last row if it has 2 images
          
-           document.write("<style>.grid-containerc {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerc'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'></div></div>");
+           fullcontent = fullcontent+"<style>.grid-containerc {display: grid; width:20%; grid-template-columns: auto auto auto; margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerc'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'><a href='"+lnknb+"'><img src='"+imgnb+"'></a></div><div class='grid-item'></div></div>";
          
          }
          
          else if (imnumd > array.length && imgn != null && imgnb == null && imgnc == null){ //the last row if it has 1 images
          
-          document.write("<style>.grid-containerd {display: grid; width:20%; grid-template-columns: auto auto auto;  margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerd'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>");
+          fullcontent = fullcontent+"<style>.grid-containerd {display: grid; width:20%; grid-template-columns: auto auto auto;  margin-bottom: 0px;}.grid-item {text-align: center;} </style> <div class='grid-containerd'><div class='grid-item' style='margin-right:10px;'><a href='"+lnkn+"'><img src='"+imgn+"'></a></div><div class='grid-item' style='margin-right:10px;'></div><div class='grid-item'></div></div>";
          }
          
          
@@ -228,6 +229,8 @@ document.getElementById("randdemo").innerHTML = ("<style>body{background-image: 
            imnumd= imnumd + 3;
          
          }
+         fullcontent = fullcontent.replace('thisstringisdumblikemywebsite', '');
+         document.getElementById("alldemo").innerHTML = (fullcontent);
          }
          
       </script>
@@ -245,7 +248,7 @@ document.getElementById("randdemo").innerHTML = ("<style>body{background-image: 
          top:50%;
          /* bring your own prefixes */
          transform: translate(-50%, -50%); overflow-y: scroll; height: 300px !important; margin-top:-65px;">
-         <script class="potato">getAllTitle();</script>
+         <script>getAllTitle();</script>
       </div>
       <script>
          $("#button").click(function(){
