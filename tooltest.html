@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <script src="webapi.js"></script>
+      <style>
+         img{
+         width: 300px;
+         height: 300px;
+         border-radius: 5px;
+         }
+         .album{
+         position: fixed;
+         top: 50%;
+         left: 50%;
+         /* bring your own prefixes */
+         transform: translate(-50%, -50%);
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <script>
+
+         var array = [
+         ["Ada Irin", "Navy Blue"]
+         ];
+
+      var num = array.length-1;
+         //num = images.length-1; // debug
+         //num = Math.floor( Math.random() * images.length );
+         
+        //  var img = images[ num ];
+        //  var lnk = url [ num ];
+          
+          var img ="";
+      var lnk="";
+          var rimg ="";
+      var output = "";
+      var randomoutput = "";
+      var search = "";
+      var name = "";
+
+      var access = "BQA57UAJzZnGUZ30lcbxjjSl8mFIZzRgzkTwsRNQyMXQtGd2TXuBJlWslv7VNZ-6d9xuwgRUHSf_mnM3600UyIjKzTAYupJ_a9SyfGtdRzfWMnZC43nxI27x3-J7CDFCZ_AeIgfC02LTYQGCMEmCuN3zPWJ6lgsmbVEHZ5tKJQ";
+      var spotifyApi = new SpotifyWebApi();
+    spotifyApi.setAccessToken(access);
+    search = array[num][0];
+
+
+
+ output = spotifyApi.searchAlbums(search, null, function(err, data){
+   if (err) console.error(err);
+  else
+   raw = data.albums; 
+   img = data.albums.items[0].images[0].url;
+   name = data.albums.items[0].name;
+   lnk = "https://open.spotify.com/album/"+data.albums.items[0].id;
+
+          document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+lnk+");} .im{visibility:hidden;}</style><a href='"+lnk+"'><img style='width:300px; height:300px;' src='"+img+"'></a>");
+   console.log(name);
+});
+
+       var itemsearch = "";
+      var alloutput = "";
+      var aimg = "";
+      var alnk = "";
+      var aname = "";
+      var allcontent = "";
+      var thiscontent = "";
+      var itn = 0;
+
+
+ var randomApi = new SpotifyWebApi();
+randomApi.setAccessToken(access);
+
+function change(){
+rando = Math.floor( Math.random() * array.length );
+rearch = array[rando][0]; //+" "+array[rando][1];
+
+randomoutput = randomApi.searchAlbums(rearch, null, function(err, data){
+   if (err) console.error(err);
+  else 
+   rimg = data.albums.items[0].images[0].url;
+   rname = data.albums.items[0].name;
+   rlnk = "https://open.spotify.com/album/"+data.albums.items[0].id;
+
+          document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+rlnk+");} .im{visibility:hidden;}</style><a href='"+rlnk+"'><img style='width:300px; height:300px;' src='"+rimg+"'></a>");
+   console.log(rname);
+  }); 
+
+}
+         
+      </script>
+      
+      <div class="album" id="randdemo" style='visibility: visible;'>
+      </div>
+      <script>
+         window.addEventListener("keydown", checkKeyPressed, false);
+         
+         function checkKeyPressed(evt) {
+             if (evt.keyCode == "13") {
+                    window.location.reload();
+             }
+         }
+      </script>
+   </body>
+</html>
