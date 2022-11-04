@@ -176,20 +176,29 @@ document.getElementById("randdemo").innerHTML = ("<style>body{background-image: 
          
          function up() {
              bonusnum = bonusnum -1;
-             if (bonusnum < 0){bonusnum = array.length-1;}
+             if (bonusnum < 0){
+               bonusnum = array.length;
+               document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url('https://open.spotify.com/playlist/7utOpnPPucDWNYTtk9AafQ');} .im{visibility:hidden;}</style><a href='https://open.spotify.com/playlist/7utOpnPPucDWNYTtk9AafQ'><img style='width:300px; height:300px;' src='https://f4.bcbits.com/img/a2133521814_5.jpg'></a>");
+             }
+             else{
                var uimg = array[ bonusnum ][1];
+             
             var ulnk = array [ bonusnum ][0];
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+ulnk+");} .im{visibility:hidden;}</style><a href='"+ulnk+"'><img style='width:300px; height:300px;' src='"+uimg+"'></a>");
-          document.close();
+          document.close();}
          }
 
                   function down() {
              bonusnum = bonusnum + 1;
-             if (bonusnum > array.length-1){bonusnum = 0;}
+             if (bonusnum > array.length-1){
+               bonusnum = -1;
+               document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url('https://open.spotify.com/playlist/7utOpnPPucDWNYTtk9AafQ');} .im{visibility:hidden;}</style><a href='https://open.spotify.com/playlist/7utOpnPPucDWNYTtk9AafQ'><img style='width:300px; height:300px;' src='https://f4.bcbits.com/img/a2133521814_5.jpg'></a>");
+            }
+            else{
                var dimg = array[ bonusnum ][1];
             var dlnk = array [ bonusnum ][0];
 document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url("+dlnk+");} .im{visibility:hidden;}</style><a href='"+dlnk+"'><img style='width:300px; height:300px;' src='"+dimg+"'></a>");
-          document.close();
+          document.close();}
          }
          
          var imnum = 0;
@@ -238,8 +247,8 @@ document.getElementById("randdemo").innerHTML = ("<style>body{background-image: 
       </script>
       <i id="button" class="fa fa-archive album" style="margin-top: 135px; margin-left: -40px;"></i>
       <i id="random" onclick="random()" class="fa fa-refresh album" style="margin-top: 205px; margin-left: -36px;"></i>
-      <i id="up" onclick="down()" class="fa fa-caret-square-o-up album" style="margin-top: 135px; margin-left: 40px;"></i>
-      <i id="down" onclick="up()" class="fa fa-caret-square-o-down album" style="margin-top: 205px; margin-left: 40px;"></i>
+      <i id="up" onclick="up()" class="fa fa-caret-square-o-up album" style="margin-top: 135px; margin-left: 40px;"></i>
+      <i id="down" onclick="down()" class="fa fa-caret-square-o-down album" style="margin-top: 205px; margin-left: 40px;"></i>
 
       <div class="album" id="randdemo" style='visibility: visible; margin-top:-65px;'>
         <script>getRandomTitle();</script>
