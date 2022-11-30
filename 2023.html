@@ -104,9 +104,16 @@
          #alldemo{
             -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none; 
+    overflow-y: scroll !important;
+  scroll-snap-points-y: repeat(300px);
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
          }
          #alldemo::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
+}
+#alldemo div{
+     scroll-snap-align: start;
 }
          /* Modal Content */
          /* Add Animation */
