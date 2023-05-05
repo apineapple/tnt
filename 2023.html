@@ -535,7 +535,7 @@
    var lnk = array[num][0];
 
    function getRandomTitle() {
-      document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url(" + lnk + ");} .im{visibility:hidden;}</style><a href='" + lnk + "'><img style='width:300px; height:300px;' src='" + img + "'></a>");
+      document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url(" + lnk + ");} .im{visibility:hidden;}</style><a href='" + lnk + "'><img class='bdcplz' style='width:300px; height:300px;' src='" + img + "'></a>");
       document.close();
    }
    var rnum = 0;
@@ -546,7 +546,7 @@
       bonusnum = rnum;
       var rimg = array[rnum][1];
       var rlnk = array[rnum][0];
-      document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url(" + rlnk + ");} .im{visibility:hidden;}</style><a href='" + rlnk + "'><img style='width:300px; height:300px;' src='" + rimg + "'></a>");
+      document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url(" + rlnk + ");} .im{visibility:hidden;}</style><a href='" + rlnk + "'><img class='bdcplz' style='width:300px; height:300px;' src='" + rimg + "'></a>");
       document.close();
    }
 
@@ -557,7 +557,7 @@
       }
       var uimg = array[bonusnum][1];
       var ulnk = array[bonusnum][0];
-      document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url(" + ulnk + ");} .im{visibility:hidden;}</style><a href='" + ulnk + "'><img style='width:300px; height:300px;' src='" + uimg + "'></a>");
+      document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url(" + ulnk + ");} .im{visibility:hidden;}</style><a href='" + ulnk + "'><img class='bdcplz' style='width:300px; height:300px;' src='" + uimg + "'></a>");
       document.close();
    }
 
@@ -568,7 +568,7 @@
       }
       var dimg = array[bonusnum][1];
       var dlnk = array[bonusnum][0];
-      document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url(" + dlnk + ");} .im{visibility:hidden;}</style><a href='" + dlnk + "'><img style='width:300px; height:300px;' src='" + dimg + "'></a>");
+      document.getElementById("randdemo").innerHTML = ("<style>body{background-image: url(" + dlnk + ");} .im{visibility:hidden;}</style><a href='" + dlnk + "'><img class='bdcplz' style='width:300px; height:300px;' src='" + dimg + "'></a>");
       document.close();
    }
    var imnum = 0;
@@ -591,12 +591,12 @@
          lnknc = array[imnum + 2][0];
          imgnd = array[imnum + 3][1];
          if(imgn != null && imgnb != null && imgnc != null && imgnd != null) { //all rows except the last one
-            fullcontent = fullcontent + "<div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='" + lnkn + "'><img src='" + imgn + "'></a></div><div class='grid-item' style='margin-right:10px;'><a href='" + lnknb + "'><img src='" + imgnb + "'></a></div><div class='grid-item'><a href='" + lnknc + "'><img src='" + imgnc + "'></a></div></div>";
+            fullcontent = fullcontent + "<div class='grid-containera'><div class='grid-item' style='margin-right:10px;'><a href='" + lnkn + "'><img class='bdcplz' src='" + imgn + "'></a></div><div class='grid-item' style='margin-right:10px;'><a href='" + lnknb + "'><img class='bdcplz' src='" + imgnb + "'></a></div><div class='grid-item'><a href='" + lnknc + "'><img class='bdcplz' src='" + imgnc + "'></a></div></div>";
          }
          imnum = imnum + 3;
       }
       fullcontent = fullcontent.replace('thisstringisdumblikemywebsite', '');
-      fullcontent = fullcontent + "<div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='" + array[imnum][0] + "'><img src='" + array[imnum][1] + "'></a></div><div class='grid-item' style='margin-right:10px;'><a href='" + array[imnum + 1][0] + "'><img src='" + array[imnum + 1][1] + "'></a></div><div class='grid-item'></div></div>";
+      fullcontent = fullcontent + "<div class='grid-containerb'><div class='grid-item' style='margin-right:10px;'><a href='" + array[imnum][0] + "'><img class='bdcplz' src='" + array[imnum][1] + "'></a></div><div class='grid-item' style='margin-right:10px;'><a href='" + array[imnum + 1][0] + "'><img class='bdcplz' src='" + array[imnum + 1][1] + "'></a></div><div class='grid-item'></div></div>";
       document.getElementById("alldemo").innerHTML = (fullcontent);
    }
    </script> <i id="button" class="fa fa-archive album" style="margin-top: 135px; margin-left: -40px;"></i> <i id="random" onclick="random()" class="fa fa-refresh album" style="margin-top: 205px; margin-left: -36px;"></i> <i id="up" onclick="up()" class="fa fa-caret-square-o-up album" style="margin-top: 135px; margin-left: 40px;"></i> <i id="down" onclick="down()" class="fa fa-caret-square-o-down album" style="margin-top: 205px; margin-left: 40px;"></i>
