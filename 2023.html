@@ -623,6 +623,15 @@
    });
    </script>
    <script>
+         if (window.self === window.top) {
+        console.log('This page is loaded in the browser');
+      } else {
+             var images = document.getElementsByTagName("img");
+      for (var i = 0; i < images.length; i++) {
+        images[i].style.borderRadius = "0px";
+        images[i].style.border = "3.5714285714px solid black";
+      }
+      }   
    window.addEventListener("keydown", checkKeyPressed, false);
 
    function checkKeyPressed(evt) {
